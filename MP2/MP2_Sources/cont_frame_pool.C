@@ -171,6 +171,8 @@ ContFramePool::ContFramePool(unsigned long _base_frame_no,
                 nFreeFrames -= _n_info_frames;
             }
         }
+    pools[cur_pool] =this;
+    cur_pool ++;
     COnsole::puts("Pools successfully Initialized")
 
 }
@@ -208,7 +210,7 @@ void ContFramePool::mark_inaccessible(unsigned long _base_frame_no,
                                       unsigned long _n_frames)
 {
     // TODO: IMPLEMENTATION NEEEDED!
-    assert((_base_frame_no>=base_frame_no) && (_base-frame_no <= base_frame_no+n_frames-_n_frames));
+    assert((_base_frame_no>=base_frame_no));
     bitmap[_base_frame_no-base_frame_no] = 2;
     for (i=_base_frame_no+1;i<_base_frame_no+_n_frames;i++){
         assert((i>= base_frame_no)&&(i<base_frame_no + nframes));
@@ -226,5 +228,5 @@ void ContFramePool::release_frames(unsigned long _first_frame_no)
 unsigned long ContFramePool::needed_info_frames(unsigned long _n_frames)
 {
     // TODO: IMPLEMENTATION NEEEDED!
-    return (_n_frames/16384 +(_n_frames % 16384 > 0?1:0));
+    return (_n_frames/16384 +(_n_frames % 16384 >0 ? 1:0));
 }
