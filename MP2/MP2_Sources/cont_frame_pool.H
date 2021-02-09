@@ -52,7 +52,7 @@ private:
     unsigned long   base_frame_no; // Where does the frame pool start in phys mem?
 
     static ContFramePool* pools[];        //
-    void final_relase(unsigned long _frame_no);
+    void _final_relase(unsigned long _frame_no);
     
 public:
 

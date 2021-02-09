@@ -136,11 +136,11 @@ ContFramePool::ContFramePool(unsigned long _base_frame_no,
 {
     // TODO: IMPLEMENTATION NEEEDED!
     // Bitmap must fit in a single frame!
-    assert(_nframes <= FRAME_SIZE * 8);
+    assert(_n_frames <= FRAME_SIZE * 8);
     
     base_frame_no = _base_frame_no;
-    nframes = _nframes;
-    nFreeFrames = _nframes;
+    nframes = _n_frames;
+    nFreeFrames = _n_frames;
     info_frame_no = _info_frame_no;
     n_info_frames = _n_info_frames;
 
@@ -153,7 +153,7 @@ ContFramePool::ContFramePool(unsigned long _base_frame_no,
     }
 
     // Everything ok. Proceed to mark all bits in the bitmap
-    for(int i=0; i*8 < _nframes; i++) {
+    for(int i=0; i < _n_frames; i++) {
         bitmap[i] = 0;
     }
     //We could set the bitmap with different flags, 0 means free to use,
@@ -171,9 +171,10 @@ ContFramePool::ContFramePool(unsigned long _base_frame_no,
                 nFreeFrames -= _n_info_frames;
             }
         }
-    pools[cur_pool] =this;
+    }
+    pools[cur_pool_num] =this;
     cur_pool_num += 1;
-    COnsole::puts("Pools successfully Initialized")
+    Console::puts("Pools successfully Initialized");
 
 }
 
@@ -181,7 +182,7 @@ unsigned long ContFramePool::get_frames(unsigned int _n_frames)
 {
     // TODO: IMPLEMENTATION NEEEDED!
     assert(nFreeFrames>0);
-    int cur_pos = 0;
+    int cur = 0;
     int distance;
     unsigned int visited=0;
     unsigned int cur_head = base_frame_no;
@@ -190,7 +191,7 @@ unsigned long ContFramePool::get_frames(unsigned int _n_frames)
             cur ++;
         }
         distance = cur;
-        while((cur<nframes) && (bitmap[cur] == 0){
+        while((cur<nframes) && (bitmap[cur] == 0)){
             cur ++;
             if(cur-distance==_n_frames){
                 break;
@@ -201,9 +202,9 @@ unsigned long ContFramePool::get_frames(unsigned int _n_frames)
             return 0;
         }
     }
-    frame_no += distance;
-    mark_inaccessible(frame_no, _n_frames);
-    return frame_no;
+    cur_head += distance;
+    mark_inaccessible(cur_head, _n_frames);
+    return cur_head;
 }
 
 void ContFramePool::mark_inaccessible(unsigned long _base_frame_no,
@@ -212,7 +213,7 @@ void ContFramePool::mark_inaccessible(unsigned long _base_frame_no,
     // TODO: IMPLEMENTATION NEEEDED!
     assert(_base_frame_no>=base_frame_no);
     bitmap[_base_frame_no-base_frame_no] = 2;
-    for (i=_base_frame_no+1;i<_base_frame_no+_n_frames;i++){
+    for (int i=_base_frame_no+1;i<_base_frame_no+_n_frames;i++){
         assert((i>= base_frame_no)&&(i<base_frame_no + nframes));
         bitmap[i-base_frame_no] = 1;
     }
@@ -229,13 +230,13 @@ void ContFramePool::release_frames(unsigned long _first_frame_no)
         if((_first_frame_no < this_base) || (_first_frame_no >= this_base+this_nframes)){
             continue;
         }else{
-            thisPool->final_relase(_first_frame_no);
+            thisPool->_final_relase(_first_frame_no);
             break;
         }
     }
 }
 
-void ContFramePool::final_relase(unsigned long _first_frame_no)
+void ContFramePool::_final_relase(unsigned long _first_frame_no)
 {
     // TODO: IMPLEMENTATION NEEEDED!
     unsigned int tail;
@@ -248,10 +249,10 @@ void ContFramePool::final_relase(unsigned long _first_frame_no)
     while((distance < base_frame_no+nframes)&&(bitmap[distance] != 1)){
         distance+=1;
     }
-    for(int i=distance; i<=distance-tail;i+=){
+    for(int i=distance; i<=distance-tail;i+=1){
         bitmap[distance] = 0;
     }
-    nFreeFrames +=(distance-tail)
+    nFreeFrames +=(distance-tail);
 }
 
 unsigned long ContFramePool::needed_info_frames(unsigned long _n_frames)
