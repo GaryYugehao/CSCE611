@@ -49,6 +49,10 @@ private:
     unsigned long   nframes;       // Size of the frame pool
     unsigned long   base_frame_no; // Where does the frame pool start in phys mem?
 
+    static ContFramePool* pools[];        //
+    static const unsigned int POOL_NUMS;  //How many pools could we have
+    static unsigned int cur_pool_num;      //the number of the current pool in all pools
+    void final_relase(unsigned long _frame_no);
     
 public:
 
@@ -122,6 +126,4 @@ public:
      The exact number is computed in this function..
      */
 };
-
-struct pool{ContFramePool *currentPool; pool* next;};
 #endif

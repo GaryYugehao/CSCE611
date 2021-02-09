@@ -42,6 +42,8 @@ class ContFramePool {
     
 private:
     /* -- DEFINE YOUR CONT FRAME POOL DATA STRUCTURE(s) HERE. */
+    static const unsigned int POOL_NUMS;  //How many pools could we have
+    static unsigned int cur_pool_num;      //the number of the current pool in all pools
     unsigned long   info_frame_no; // Where do we store the management information?
     unsigned long   n_info_frames; // how many frames we need to store
     unsigned char * bitmap;        // We implement the simple frame pool with a bitmap
@@ -50,8 +52,7 @@ private:
     unsigned long   base_frame_no; // Where does the frame pool start in phys mem?
 
     static ContFramePool* pools[];        //
-    static const unsigned int POOL_NUMS;  //How many pools could we have
-    static unsigned int cur_pool_num;      //the number of the current pool in all pools
+    void final_relase(unsigned long _frame_no);
     
 public:
 
