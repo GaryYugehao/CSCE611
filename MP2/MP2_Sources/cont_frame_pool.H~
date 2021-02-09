@@ -52,6 +52,7 @@ private:
     static ContFramePool* pools[];        //
     static const unsigned int POOL_NUMS;  //How many pools could we have
     static unsigned int cur_pool_num;      //the number of the current pool in all pools
+    unsigned long _get_frames();
     
 public:
 
@@ -82,7 +83,6 @@ public:
      NOTE: This function must be called before the paging system
      is initialized.
      */
-    
     unsigned long get_frames(unsigned int _n_frames);
     /*
      Allocates a number of contiguous frames from the frame pool.

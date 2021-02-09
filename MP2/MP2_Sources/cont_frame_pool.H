@@ -52,7 +52,6 @@ private:
     static ContFramePool* pools[];        //
     static const unsigned int POOL_NUMS;  //How many pools could we have
     static unsigned int cur_pool_num;      //the number of the current pool in all pools
-    unsigned long _get_frames();
     
 public:
 

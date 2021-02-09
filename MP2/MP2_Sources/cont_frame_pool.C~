@@ -171,21 +171,50 @@ ContFramePool::ContFramePool(unsigned long _base_frame_no,
                 nFreeFrames -= _n_info_frames;
             }
         }
-    COnsole::puts("Pools successfully Initialized");
+    COnsole::puts("Pools successfully Initialized")
 
 }
 
 unsigned long ContFramePool::get_frames(unsigned int _n_frames)
 {
     // TODO: IMPLEMENTATION NEEEDED!
-    assert(false);
+    assert(nFreeFrames>0);
+    int cur_pos = 0;
+    int distance;
+    unsigned int visited=0;
+    unsigned int cur_head = base_frame_no;
+    while(visited<_n_frames){
+        while((cur<nframes) && (bitmap[cur] != 0)){
+            cur ++;
+        }
+        distance = cur;
+        while((cur<nframes) && (bitmap[cur] == 0){
+            cur ++;
+            if(cur-distance==_n_frames){
+                break;
+            }
+        }
+        visited = cur-distance;
+        if(cur>=nframes){
+            return 0;
+        }
+    }
+    frame_no += distance;
+    mark_inaccessible(frame_no, _n_frames);
+    return frame_no;
 }
 
 void ContFramePool::mark_inaccessible(unsigned long _base_frame_no,
                                       unsigned long _n_frames)
 {
     // TODO: IMPLEMENTATION NEEEDED!
-    assert(false);
+    assert((_base_frame_no>=base_frame_no) && (_base-frame_no <= base_frame_no+n_frames-_n_frames));
+    bitmap[_base_frame_no-base_frame_no] = 2;
+    for (i=_base_frame_no+1;i<_base_frame_no+_n_frames;i++){
+        assert((i>= base_frame_no)&&(i<base_frame_no + nframes));
+        bitmap[i-base_frame_no] = 1;
+    }
+    nFreeFrames -= _n_frames;
 }
 
 void ContFramePool::release_frames(unsigned long _first_frame_no)
