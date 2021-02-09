@@ -136,7 +136,7 @@ ContFramePool::ContFramePool(unsigned long _base_frame_no,
 {
     // TODO: IMPLEMENTATION NEEEDED!
     // Bitmap must fit in a single frame!
-    assert(_nframes <= FRAME_SIZE * 8);
+    assert(_nframes <= FRAME_SIZE * 4);
     
     base_frame_no = _base_frame_no;
     nframes = _nframes;
@@ -153,24 +153,16 @@ ContFramePool::ContFramePool(unsigned long _base_frame_no,
     }
 
     // Everything ok. Proceed to mark all bits in the bitmap
-    for(int i=0; i*8 < _nframes; i++) {
-        bitmap[i] = 0;
+    for(int i=0; i*4 < _nframes; i++) {
+        bitmap[i] = 0xFF;
     }
-    //We could set the bitmap with different flags, 0 means free to use,
-    // 1 means used and 2 means the beginning of the current memory pool.
+    //We could set the bitmap with different flags, FF(1111,1111) means free to use,
+    //and 7F(0111,1111) means head.
 
     if(_info_frame_no==0){
-        bitmap[0] = 2;
-    //define the head of current pool
-        if(_n_info_frames<1){
-            nFreeFrames --;
-        } else {
-            for(int i=1;i<_n_info_frames;i++){
-                bitmap[i] = 1;
-    //marked all used frames as used and reduced same free counts
-                nFreeFrames -= _n_info_frames;
-            }
-        }
+        bitmap[0] = 0x7F;
+        nFreeFrames --;    
+    }
     COnsole::puts("Pools successfully Initialized");
 
 }
@@ -181,6 +173,11 @@ unsigned long ContFramePool::get_frames(unsigned int _n_frames)
     assert(false);
 }
 
+unsigned long ContFramePool::_get_frames(unsigned int _n_frames)
+{
+    // TODO: IMPLEMENTATION NEEEDED!
+    assert(false);
+}
 void ContFramePool::mark_inaccessible(unsigned long _base_frame_no,
                                       unsigned long _n_frames)
 {

@@ -159,6 +159,20 @@ ContFramePool::ContFramePool(unsigned long _base_frame_no,
     //We could set the bitmap with different flags, 0 means free to use,
     // 1 means used and 2 means the beginning of the current memory pool.
 
+    if(_info_frame_no==0){
+        bitmap[0] = 2;
+    //define the head of current pool
+        if(_n_info_frames<1){
+            nFreeFrames --;
+        } else {
+            for(int i=1;i<_n_info_frames;i++){
+                bitmap[i] = 1;
+    //marked all used frames as used and reduced same free counts
+                nFreeFrames -= _n_info_frames;
+            }
+        }
+    COnsole::puts("Pools successfully Initialized");
+
 }
 
 unsigned long ContFramePool::get_frames(unsigned int _n_frames)
