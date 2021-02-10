@@ -249,7 +249,7 @@ void ContFramePool::_final_relase(unsigned long _first_frame_no)
     while((distance < base_frame_no+nframes)&&(bitmap[distance] != 1)){
         distance+=1;
     }
-    for(int i=distance; i<=distance-tail;i+=){
+    for(int i=distance; i<=distance-tail;i+=1){
         bitmap[distance] = 0;
     }
     nFreeFrames +=(distance-tail);

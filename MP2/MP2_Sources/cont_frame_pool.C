@@ -122,77 +122,102 @@
 /*--------------------------------------------------------------------------*/
 
 /* -- (none) -- */
-const unsigned int ContFramePool::POOL_NUMS=1;
-unsigned int ContFramePool::cur_pool_num=0;
-ContFramePool* ContFramePool::pools[POOL_NUMS];
+
 /*--------------------------------------------------------------------------*/
 /* METHODS FOR CLASS   C o n t F r a m e P o o l */
 /*--------------------------------------------------------------------------*/
 
-ContFramePool::ContFramePool(unsigned long _base_frame_no,
-                             unsigned long _n_frames,
-                             unsigned long _info_frame_no,
-                             unsigned long _n_info_frames)
+//struct node{ContFramePool current_pool(unsigned long base, unsigned long n,
+//				 unsigned long info_no, unsigned long n_info);
+//				 node *next;};
+node *pool_list_head;
+
+
+
+
+
+ContFramePool::ContFramePool(unsigned long _base_frame_no, unsigned long _n_frames, unsigned long _info_frame_no, unsigned long _n_info_frames)
 {
     // TODO: IMPLEMENTATION NEEEDED!
-    // Bitmap must fit in a single frame!
-    assert(_n_frames <= FRAME_SIZE * 8);
-    
-    base_frame_no = _base_frame_no;
-    nframes = _n_frames;
-    nFreeFrames = _n_frames;
-    info_frame_no = _info_frame_no;
-    n_info_frames = _n_info_frames;
 
-    // If _info_frame_no is zero then we keep management info in the first
-    //frame, else we use the provided frame to keep management info
-    if(info_frame_no == 0) {
-        bitmap = (unsigned char *) (base_frame_no * FRAME_SIZE);
-    } else {
-        bitmap = (unsigned char *) (info_frame_no * FRAME_SIZE);
-    }
+//	assert(nframes <= FRAME_SIZE * 4);
+	
+	base_frame_no 	= _base_frame_no;
+	nframes 	= _n_frames;
+	nfreeframes 	= _n_frames;
+	info_frame_no   = _info_frame_no;
+	ninfoframes	= _n_info_frames;
 
-    // Everything ok. Proceed to mark all bits in the bitmap
-    for(int i=0; i < _n_frames; i++) {
-        bitmap[i] = 0;
-    }
-    //We could set the bitmap with different flags, 0 means free to use,
-    // 1 means used and 2 means the beginning of the current memory pool.
 
-    if(_info_frame_no==0){
-        bitmap[0] = 2;
-    //define the head of current pool
-        if(_n_info_frames<1){
-            nFreeFrames --;
-        } else {
-            for(int i=1;i<_n_info_frames;i++){
-                bitmap[i] = 1;
-    //marked all used frames as used and reduced same free counts
-                nFreeFrames -= _n_info_frames;
-            }
-        }
-    }
-    pools[cur_pool_num] =this;
-    cur_pool_num += 1;
-    Console::puts("Pools successfully Initialized");
+	//directly give address to the 1st position of bitmap
+	if(info_frame_no == 0) {
+		bitmap = (unsigned char*) (base_frame_no * FRAME_SIZE);	
+//		isHead = (unsigned char*) (base_frame_no * FRAME_SIZE);
+	}else{
+		bitmap = (unsigned char*) (info_frame_no * FRAME_SIZE);
+	}
 
+	//initially, all frames are unallocated, not the head of sequence
+	for(int i = 0; i * 4 < nframes; i++){
+		bitmap[i] = 0xFF;
+	}
+	
+	//When the info frame number is the base frame, then we mark
+	//that frame as used
+	if(info_frame_no == 0){
+		bitmap[0] = 0x7F;
+		nfreeframes--;
+	}
+
+	node* newNode;
+
+	(*newNode).currentPool = this;	
+	node* headNext = (*pool_list_head).next;
+	if(headNext == NULL ){
+		(*pool_list_head).next =  newNode;
+	}else{
+		(*newNode).next = (*pool_list_head).next;
+		(*pool_list_head).next = newNode;
+	}		
+	
+	Console::puts("Frame pool is initialized");
 }
 
-unsigned long ContFramePool::get_frames(unsigned int _n_frames)
-{
-    // TODO: IMPLEMENTATION NEEEDED!
-    assert(nFreeFrames>0);
+unsigned int ContFramePool::check_state(unsigned long _target_frame_no, unsigned int _input_mask){
+	int frame_diff = _target_frame_no - base_frame_no;
+	unsigned int bitmap_index = frame_diff / 4;	
+	unsigned char mask1 = _input_mask >> (frame_diff % 4);
+	if((bitmap[bitmap_index] & mask1) == 0){
+		return 1; //Used
+	}else{
+		return 0; //Free
+	}
+}
+void ContFramePool::set_state(unsigned long _target_frame_no, unsigned int _input_mask){
+	unsigned int index = (_target_frame_no - base_frame_no) / 4;
+	unsigned char mask = _input_mask >> (_target_frame_no - base_frame_no) % 4;
+	bitmap[index] ^= mask;
+}
+unsigned long ContFramePool::get_frames(unsigned int _n_frames){
+
+	assert(nfreeframes >= _n_frames);
     int cur = 0;
     int distance;
     unsigned int visited=0;
     unsigned int cur_head = base_frame_no;
     while(visited<_n_frames){
-        while((cur<nframes) && (bitmap[cur] != 0)){
+	unsigned int frame_pos = cur+base_frame_no;
+	unsigned int cur_state = check_state(frame_pos, 0x80);
+        while((cur<nframes) && (cur_state != 0)){ //Not free
             cur ++;
+	    frame_pos ++;
+	    cur_state = check_state(frame_pos, 0x80);
         }
         distance = cur;
-        while((cur<nframes) && (bitmap[cur] == 0)){
+        while((cur<nframes) && (cur_state == 0)){
             cur ++;
+	    frame_pos ++;
+	    cur_state = check_state(frame_pos, 0x80);
             if(cur-distance==_n_frames){
                 break;
             }
@@ -204,59 +229,65 @@ unsigned long ContFramePool::get_frames(unsigned int _n_frames)
     }
     cur_head += distance;
     mark_inaccessible(cur_head, _n_frames);
+    unsigned char temp_mask2 = 0x08>>((cur_head-base_frame_no)%4);
+    bitmap[cur / 4] ^= temp_mask2;
     return cur_head;
 }
 
-void ContFramePool::mark_inaccessible(unsigned long _base_frame_no,
-                                      unsigned long _n_frames)
+
+void ContFramePool::mark_inaccessible(unsigned long _base_frame_no, unsigned long _n_frames)
 {
-    // TODO: IMPLEMENTATION NEEEDED!
-    assert(_base_frame_no>=base_frame_no);
-    bitmap[_base_frame_no-base_frame_no] = 2;
-    for (int i=_base_frame_no+1;i<_base_frame_no+_n_frames;i++){
-        assert((i>= base_frame_no)&&(i<base_frame_no + nframes));
-        bitmap[i-base_frame_no] = 1;
-    }
-    nFreeFrames -= _n_frames;
+	int i;
+	for(i = _base_frame_no; i < _base_frame_no + _n_frames; i++){
+		assert ((i >= base_frame_no) && (i < base_frame_no + nframes));
+		set_state(i, 0x80);
+
+	}
+	nfreeframes -= _n_frames;
+
+
 }
 
 void ContFramePool::release_frames(unsigned long _first_frame_no)
 {
     // TODO: IMPLEMENTATION NEEEDED!
-    for(int i=0; i<cur_pool_num;i+=1){
-        ContFramePool* thisPool = pools[i];
-        int this_base = thisPool->base_frame_no;
-        int this_nframes = thisPool->nframes;
-        if((_first_frame_no < this_base) || (_first_frame_no >= this_base+this_nframes)){
-            continue;
-        }else{
-            thisPool->_final_relase(_first_frame_no);
-            break;
-        }
-    }
-}
+    //assert(false);
+	node *currentNode = (*pool_list_head).next;
+	ContFramePool cur_pool = *((*currentNode).currentPool);
+	while(!(_first_frame_no >= cur_pool.base_frame_no && 
+		 _first_frame_no < cur_pool.base_frame_no+cur_pool.nframes)){
+		currentNode = (*currentNode).next;
+		cur_pool = *((*currentNode).currentPool);
+	}
 
-void ContFramePool::_final_relase(unsigned long _first_frame_no)
-{
-    // TODO: IMPLEMENTATION NEEEDED!
-    unsigned int tail;
-    int distance = _first_frame_no - base_frame_no;
-    assert((_first_frame_no<info_frame_no) || (_first_frame_no>=info_frame_no+n_info_frames));
-    while((distance < base_frame_no+nframes)&&(bitmap[distance] != 2)){
-        distance+=1;
-    }
-    tail = distance;
-    while((distance < base_frame_no+nframes)&&(bitmap[distance] != 1)){
-        distance+=1;
-    }
-    for(int i=distance; i<=distance-tail;i+=1){
-        bitmap[distance] = 0;
-    }
-    nFreeFrames +=(distance-tail);
+
+	unsigned int cur_state = cur_pool.check_state(_first_frame_no, 0x08);
+
+	if(cur_state == 1){
+		cur_pool.set_state(_first_frame_no, 0x08);
+	}
+	
+	int i;
+	for(i = _first_frame_no; i < cur_pool.base_frame_no + cur_pool.nframes; i++){
+		int frame_diff = i - cur_pool.base_frame_no;
+		unsigned int bitmap_index = frame_diff / 4;
+		//when reach the head of sequence
+		unsigned int head_state = cur_pool.check_state(i, 0x08);
+		if(head_state==1) break;
+		//when there are free frames
+		unsigned int free_state = cur_pool.check_state(i, 0x80);
+		//Free->0
+		if(free_state==1) break;
+		cur_pool.bitmap[bitmap_index] |= 0x80 >> (frame_diff%4);
+	}
 }
 
 unsigned long ContFramePool::needed_info_frames(unsigned long _n_frames)
 {
     // TODO: IMPLEMENTATION NEEEDED!
-    return (_n_frames/16384 +(_n_frames % 16384 >0 ? 1:0));
+//    assert(false);
+	//16384 = 16 k = 4KB * 4
+	return (_n_frames / 16384 + (_n_frames % 16384 > 0 ? 1 : 0));
+	
+
 }
