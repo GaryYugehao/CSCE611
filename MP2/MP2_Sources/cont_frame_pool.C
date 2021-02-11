@@ -269,6 +269,8 @@ void ContFramePool::release_frames(unsigned long _first_frame_no)
 	
 	int i;
 	for(i = _first_frame_no; i < cur_pool.base_frame_no + cur_pool.nframes; i++){
+		int frame_diff = i - cur_pool.base_frame_no;
+		int bitmap_index = frame_diff / 4;
 		//when reach the head of sequence
 		unsigned int head_state = cur_pool.check_state(i, 0x08);
 		if(head_state==1) break;
@@ -276,7 +278,7 @@ void ContFramePool::release_frames(unsigned long _first_frame_no)
 		unsigned int free_state = cur_pool.check_state(i, 0x80);
 		//Free->0
 		if(free_state==1) break;
-		cur_pool.set_state(i, 0x80);
+		cur_pool.bitmap[bitmap_index] |= 0x80 >> (frame_diff%4);
 	}
 }
 
