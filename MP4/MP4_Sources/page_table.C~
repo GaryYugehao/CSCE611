@@ -129,7 +129,7 @@ void PageTable::register_pool(VMPool * _vm_pool)
 {
     int status = -1;
 
-    for(int i=0; i<vm_pool_max_num; ++i){
+    for(int i=0; i<vmpool_max_num; ++i){
         if (vmpool_manager[i] == NULL){
             status = i;
             vmpool_manager[i] = _vm_pool;
