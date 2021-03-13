@@ -54,8 +54,8 @@ private:
   unsigned long        * page_table;
   
   // -- NEW IN MP4
-  static const unsigned int vm_pool_max_num;
-  static VMPool * vmpool_manager[];
+  static const unsigned int vm_pool_cnt;
+  static VMPool * vm_pool_list[];
 
 
 public:

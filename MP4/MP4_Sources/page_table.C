@@ -10,8 +10,8 @@ ContFramePool * PageTable::kernel_mem_pool = NULL;
 ContFramePool * PageTable::process_mem_pool = NULL;
 unsigned long PageTable::shared_size = 0;
 
-const unsigned int PageTable::vm_pool_max_num = 5;
-VMPool* PageTable::vmpool_manager[vm_pool_max_num];
+const unsigned int PageTable::vm_pool_cnt = 5;
+VMPool* PageTable::vm_pool_list[vm_pool_cnt];
 
 
 void PageTable::init_paging(ContFramePool * _kernel_mem_pool,
@@ -52,9 +52,9 @@ PageTable::PageTable()
 	//Let the last page directory entry pointed to itself.
 
 	unsigned int j;
-	//empty the vmpool managers
-	for (j=0; j<vm_pool_max_num; j++){
-		vmpool_manager[j] = NULL;
+	//empty the vm pool lists
+	for (j=0; j<vm_pool_cnt; j++){
+		vm_pool_list[j] = NULL;
 	}
 	Console::puts("Constructed Page Table object\n");
 }
@@ -91,17 +91,17 @@ void PageTable::handle_fault(REGS * _r)
 		//Check if the logical address is legitimate
 		Console::puts("Checking the logical address\n");
 		
-		VMPool** vm_manager = current_page_table->vmpool_manager;
+		VMPool** vm_list = current_page_table->vm_pool_list;
 
-		int logical_valid = -1;
-		for(int i=0;i<vm_pool_max_num;i++){
-			if(vm_manager[i] != NULL){
-				logical_valid = i;
-				Console::puts("Current manager is valid\n");
+		bool logical_valid = false;
+		for(int i=0;i<vm_pool_cnt;i++){
+			if(vm_list[i] != NULL){
+				logical_valid = true;
+				Console::puts("Current list is valid\n");
 			}
 		}
 		
-		if(logical_valid < 0){
+		if(logical_valid == false){
 			Console::puts("No valid address..\n");
 		} 
 		// If the current page directory's offset corresponding page table is "non present"
@@ -127,18 +127,18 @@ void PageTable::handle_fault(REGS * _r)
 //
 void PageTable::register_pool(VMPool * _vm_pool)
 {
-    int status = -1;
+    bool status = false;
 
-    for(int i=0; i<vm_pool_max_num; ++i){
-        if (vmpool_manager[i] == NULL){
-            status = i;
-            vmpool_manager[i] = _vm_pool;
+    for(int i=0; i<vm_pool_cnt; ++i){
+        if (vm_pool_list[i] == NULL){
+            status = true;
+            vm_pool_list[i] = _vm_pool;
             Console::puts("Successfully register Virtual memory pool.\n");
             break;
         }
     }
 
-    if (status < 0){
+    if (status == false){
         Console::puts("Failed to register virtual memory pool.\n");
     }
 
