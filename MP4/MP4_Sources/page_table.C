@@ -127,20 +127,17 @@ void PageTable::handle_fault(REGS * _r)
 //
 void PageTable::register_pool(VMPool * _vm_pool)
 {
-    bool status = false;
-
+    //for each pool in the list
     for(int i=0; i<vm_pool_cnt; ++i){
+	//If we find out an empty one
         if (vm_pool_list[i] == NULL){
-            status = true;
             vm_pool_list[i] = _vm_pool;
             Console::puts("Successfully register Virtual memory pool.\n");
-            break;
+            return;
         }
     }
+    Console::puts("Failed to register virtual memory pool.\n");
 
-    if (status == false){
-        Console::puts("Failed to register virtual memory pool.\n");
-    }
 
     
 }
@@ -150,8 +147,8 @@ void PageTable::free_page(unsigned long _page_no)
 {
 	unsigned long dir_offset = _page_no >> 22;
 	unsigned long table_offset = ((_page_no >> 12) & 0x3FF);
-	unsigned long *page_Table = (unsigned long *)((dir_offset<<12)|0xFFC00000);
-	unsigned long frame_idx = page_Table[table_offset];
+	unsigned long *page_table = (unsigned long *)((dir_offset<<12)|0xFFC00000);
+	unsigned long frame_idx = page_table[table_offset];
 	process_mem_pool->release_frames(frame_idx);
 	Console::puts("Pages are freed\n");
 }
