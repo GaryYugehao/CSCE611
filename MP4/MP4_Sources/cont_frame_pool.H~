@@ -53,7 +53,7 @@ private:
     static const unsigned int pool_max_cnt;
     static unsigned int last_pool_idx;
     static ContFramePool* pools_list[];
-    void _helper(unsigned long _first_frame_no);
+
     
 public:
     
@@ -113,6 +113,8 @@ public:
      This function must first identify the correct frame pool and then call the frame
      pool's release_frame function.
      */
+
+    void _helper(unsigned long _first_frame_no);
 
     
     static unsigned long needed_info_frames(unsigned long _n_frames);

@@ -10,7 +10,7 @@ ContFramePool * PageTable::kernel_mem_pool = NULL;
 ContFramePool * PageTable::process_mem_pool = NULL;
 unsigned long PageTable::shared_size = 0;
 
-const unsigned int PageTable::vm_pool_cnt = 5;
+const unsigned int PageTable::vm_pool_cnt = 10;
 VMPool* PageTable::vm_pool_list[vm_pool_cnt];
 
 

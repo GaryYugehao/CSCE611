@@ -111,7 +111,7 @@ void PageTable::handle_fault(REGS * _r)
 			//get a frame from free frame pool and initialization process
 			cur_page_dir[dir_offset] = (unsigned long)((process_mem_pool->get_frames(1)<<12) | 3);
 			//get the new page table start address
-			page_table = (unsigned long*)((dir_offset <<12) & 0xFFC00000);
+			page_table = (unsigned long*)((dir_offset <<12) | 0xFFC00000);
 			//empty all the entries in the new page table.
 			for(int i = 0; i< 1024; i++){
 				page_table[i] = 0;
@@ -119,7 +119,7 @@ void PageTable::handle_fault(REGS * _r)
 		}else{
 			Console::puts("page present\n");
 			//only need to get the atrt address
-			page_table = (unsigned long*)((dir_offset <<12) & 0xFFC00000);
+			page_table = (unsigned long*)((dir_offset <<12) | 0xFFC00000);
 		}
 		//put the frame into the page table.
 		page_table[table_offset] = (process_mem_pool->get_frames(1) << 12) | 3;
