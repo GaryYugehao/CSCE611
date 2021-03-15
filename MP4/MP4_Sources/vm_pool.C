@@ -55,8 +55,6 @@ VMPool::VMPool(unsigned long  _base_address,
 	page_table = _page_table;
 	
 	last_mem_region = 0;
-	//get the maximum number of regions
-	mem_region_cnt = PageTable::PAGE_SIZE / sizeof(mem_region);
 	//take free frame to store the region list
 	mem_region_list = (mem_region *)(frame_pool->get_frames(1)*PageTable::PAGE_SIZE);
 	page_table->register_pool(this);
@@ -82,7 +80,7 @@ unsigned long VMPool::allocate(unsigned long _size) {
 
 
 	// try to see if we could allocate the region
-	if (last_mem_region < mem_region_cnt){
+	if (last_mem_region < (PageTable::PAGE_SIZE / sizeof(mem_region))){
 		if (last_mem_region == 0){
 			start_addr = base_address;
 		}else{
