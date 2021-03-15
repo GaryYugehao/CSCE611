@@ -79,9 +79,10 @@ void PageTable::enable_paging()
 void PageTable::handle_fault(REGS * _r)
 {
   //assert(false);
-	unsigned long *cur_page_dir = (unsigned long*) read_cr3();
+	unsigned long *cur_page_dir = (unsigned long*) 0xFFFFF000;
 	unsigned long *page_table;
 	unsigned long addr = read_cr2();
+	unsigned long table_offset = ((addr>>12) & 0x3FF);
 	unsigned long dir_offset = addr>>22;
 	unsigned long err_info = _r->err_code;
 	if((err_info & 1) == 1){
@@ -106,18 +107,21 @@ void PageTable::handle_fault(REGS * _r)
 		} 
 		// If the current page directory's offset corresponding page table is "non present"
 		if((cur_page_dir[dir_offset] & 1) != 1){
-			Console::puts("not present\n");
+			Console::puts("page not present\n");
 			//get a frame from free frame pool and initialization process
-			cur_page_dir[dir_offset] = (unsigned long)((kernel_mem_pool->get_frames(1)<<12) | 3);
-			page_table = (unsigned long*)(cur_page_dir[dir_offset] & 0xFFFFF000);
+			cur_page_dir[dir_offset] = (unsigned long)((process_mem_pool->get_frames(1)<<12) | 3);
+			//get the new page table start address
+			page_table = (unsigned long*)((dir_offset <<12) | 0xFFC00000);
 			//empty all the entries in the new page table.
 			for(int i = 0; i< 1024; i++){
-				page_table[i] = 0|2;
+				page_table[i] = 0;
 			}		
+		}else{
+			Console::puts("page present\n");
+			//only need to get the atrt address
+			page_table = (unsigned long*)((dir_offset <<12) | 0xFFC00000);
 		}
-		// Add the page table into the page directory entry.
-		unsigned long table_offset = ((addr>>12) & 0x3FF);
-		page_table = (unsigned long*)(cur_page_dir[dir_offset] & 0xFFFFF000);
+		//put the frame into the page table.
 		page_table[table_offset] = (process_mem_pool->get_frames(1) << 12) | 3;
 		Console::puts("handled page fault\n");
 	}
