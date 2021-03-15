@@ -52,7 +52,6 @@ private:
 	
 	mem_region * mem_region_list;
 	unsigned int last_mem_region;
-	unsigned int mem_region_cnt;
 
 public:
    VMPool(unsigned long  _base_address,
