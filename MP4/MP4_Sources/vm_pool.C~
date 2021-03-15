@@ -67,17 +67,12 @@ VMPool::VMPool(unsigned long  _base_address,
 unsigned long VMPool::allocate(unsigned long _size) {
 	//assert(false);
 	unsigned long start_addr = 0;
-	mem_region k;
-
-	if (_size == 0){
-		Console::puts("Size of region can not be 0.\n");
-		return 0;
-	}
 
 	//Bubble sort the memory regions sequence based on their base address
 	for (int i=0; i<last_mem_region; i++){
 		for (int j=i+1; j<last_mem_region; j++){
 			if (mem_region_list[j].base_addr < mem_region_list[i].base_addr){
+				mem_region k;
 				k = mem_region_list[i];
 				mem_region_list[i] = mem_region_list[j];
 				mem_region_list[j] = k;
