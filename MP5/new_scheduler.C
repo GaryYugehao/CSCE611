@@ -1,0 +1,188 @@
+/*
+ File: scheduler.C
+ 
+ Author:
+ Date  :
+ 
+ */
+
+/*--------------------------------------------------------------------------*/
+/* DEFINES */
+/*--------------------------------------------------------------------------*/
+
+/* -- (none) -- */
+
+/*--------------------------------------------------------------------------*/
+/* INCLUDES */
+/*--------------------------------------------------------------------------*/
+
+#include "new_scheduler.H"
+#include "thread.H"
+#include "console.H"
+#include "utils.H"
+#include "assert.H"
+#include "simple_keyboard.H"
+#include "new_timer.H"
+#include "interrupts.H"
+
+/*--------------------------------------------------------------------------*/
+/* DATA STRUCTURES */
+/*--------------------------------------------------------------------------*/
+
+FIFOQ::FIFOQ(FIFOQ& n){
+    thread = n.thread;
+    next = n.next;
+  }
+
+FIFOQ::FIFOQ(Thread* t){
+    thread = t;
+    next = NULL;
+  }
+
+FIFOQ::FIFOQ(){
+    thread = NULL;
+    next = NULL;
+  }
+void FIFOQ::setNext(FIFOQ* input_thread){
+    next = input_thread;
+  }
+Thread* FIFOQ::getThread(){
+	return thread;
+	}
+
+FIFOQ* FIFOQ::getNext(){
+	return next;	
+}
+void FIFOQ::addTail(Thread* input_thread){
+	if(thread == NULL && next == NULL){
+		thread = input_thread;
+	}else if(thread != NULL && next == NULL){
+		next = new FIFOQ(input_thread);
+	}else{
+		next->addTail(input_thread);
+	}
+    
+ }
+Thread* FIFOQ::popHead(){
+	Thread* res = NULL;
+	if(thread != NULL && next == NULL){
+		res = thread;
+		thread = NULL;
+	}else if(thread !=NULL && next != NULL){
+		res = thread;
+		thread = next->thread;
+		FIFOQ* nextFIFOQ = next;
+		next = nextFIFOQ->next;
+		delete nextFIFOQ;
+	}
+	return res;
+
+}
+
+/*--------------------------------------------------------------------------*/
+/* CONSTANTS */
+/*--------------------------------------------------------------------------*/
+
+/* -- (none) -- */
+
+/*--------------------------------------------------------------------------*/
+/* FORWARDS */
+/*--------------------------------------------------------------------------*/
+
+/* -- (none) -- */
+
+/*--------------------------------------------------------------------------*/
+/* METHODS FOR CLASS   S c h e d u l e r  */
+/*--------------------------------------------------------------------------*/
+
+RRScheduler::RRScheduler() {
+
+  FIFOQ RR_ready_queue;
+  unsigned int len_queue = 0;
+  unsigned int freq = 100;
+  RRtimer rr_timer(freq);
+  InterruptHandler::register_handler(0, &rr_timer);
+  Console::puts("Constructed Scheduler.\n");
+}
+
+
+//
+void RRScheduler::yield() {
+
+
+	Machine::disable_interrupts();
+	
+  
+  	if (len_queue > 0){
+  		Thread* popedThread = RR_ready_queue.popHead();
+  		Thread::dispatch_to(popedThread);
+		len_queue--;
+  	}
+
+  	Machine::enable_interrupts();
+
+  	Console::puts("Successfully yielded. \n");
+}
+
+
+//
+void RRScheduler::resume(Thread * _thread) {
+
+
+	Machine::disable_interrupts();
+	
+  
+	RR_ready_queue.addTail(_thread);
+	len_queue++;
+
+	Machine::enable_interrupts();
+
+	Console::puts("Successfully resumed. \n");
+
+}
+
+//
+void RRScheduler::add(Thread * _thread) {
+  
+  	RR_ready_queue.addTail(_thread);
+	len_queue++;
+
+	Console::puts("Successfully added. \n");
+
+}
+
+
+//
+void RRScheduler::terminate(Thread * _thread) {
+	
+	FIFOQ *nextThread = NULL;
+	FIFOQ *currentThread = &RR_ready_queue;
+	
+	while(currentThread->getNext() != NULL){
+		nextThread = currentThread->getNext();
+		Thread* nextT = nextThread->getThread();
+		if (nextT->ThreadId() == _thread->ThreadId()){
+			Machine::disable_interrupts();
+			currentThread->setNext(nextThread->getNext());
+			len_queue -= 1;
+			break;
+		}else{
+			currentThread = nextThread;
+		}
+	}/*
+	for (int i=0; i<len_queue; ++i){
+		Thread* cur_thread = ready_queue.popHead();
+		if (cur_thread->ThreadId() == _thread->ThreadId()){
+			len_queue -= 1;
+		}else{
+			ready_queue.addTail(temp);
+		}
+	}
+*/
+
+	Machine::enable_interrupts(); 
+
+	Console::puts("Terminating a thread ... \n");
+
+}
+

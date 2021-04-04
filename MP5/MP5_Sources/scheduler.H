@@ -20,6 +20,7 @@
 /*--------------------------------------------------------------------------*/
 
 #include "thread.H"
+#include "utils.H"
 
 /*--------------------------------------------------------------------------*/
 /* !!! IMPLEMENTATION HINT !!! */
@@ -50,6 +51,27 @@
     
  */
 
+class FIFOQ {
+  
+private:
+  Thread* thread;
+  FIFOQ* next;
+
+public:
+  FIFOQ(FIFOQ& n);
+
+  FIFOQ(Thread* t);
+
+  FIFOQ();
+
+  Thread* getThread();
+  FIFOQ* getNext();
+
+  void addTail(Thread* input_thread);
+  void setNext(FIFOQ* input_thread);
+  Thread* popHead();
+};
+
 /*--------------------------------------------------------------------------*/
 /* SCHEDULER */
 /*--------------------------------------------------------------------------*/
@@ -59,6 +81,8 @@ class Scheduler {
   /* The scheduler may need private members... */
   
 public:
+   FIFOQ ready_queue;
+   unsigned int len_queue;
 
    Scheduler();
    /* Setup the scheduler. This sets up the ready queue, for example.

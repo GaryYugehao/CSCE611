@@ -1,0 +1,25 @@
+ 0ms has passed
+10ms has passed
+10ms has passed
+
+FUN 4: TICK [5]
+ 0ms has passed
+
+FUN 4: TICK [6]
+FUN 4: TICK [7]
+ 0ms has pK [7]
+ 0ms has passed
+          a [8]
+ 0ms has CK [8]
+ 0ms has passed
+10ms has
+FUN 4: TICK [9]
+ 0ms has passed
+
+Resumi10ms has passed
+ g ...
+Yielding ...
+Yielding ...
+FUN 1 IN BURST[3]
+ 0ms has passed
+
