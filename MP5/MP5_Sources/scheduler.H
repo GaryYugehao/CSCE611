@@ -65,11 +65,16 @@ public:
   FIFOQ();
 
   Thread* getThread();
+  //Get the thread in current location is the ready queue
   FIFOQ* getNext();
+  //Get the next thread of current location is the ready queue
 
   void addTail(Thread* input_thread);
+  //Add the given thread to the tail of the ready queue
   void setNext(FIFOQ* input_thread);
+  //Set the next pointer of current thread into the given thread
   Thread* popHead();
+    //Pop the head thread of the ready queue
 };
 
 /*--------------------------------------------------------------------------*/

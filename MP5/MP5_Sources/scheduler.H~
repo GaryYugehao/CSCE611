@@ -68,7 +68,7 @@ public:
   FIFOQ* getNext();
 
   void addTail(Thread* input_thread);
-
+  void setNext(FIFOQ* input_thread);
   Thread* popHead();
 };
 

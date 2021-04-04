@@ -55,7 +55,12 @@ Installed exception handler at ISR <0>
 Allocating Memory Pool... done
 Installed interrupt handler at IRQ <0>
 Constructed Scheduler.
-Hello World!
+10ms has passed
+10ms has passed
+INTERRUPT NO: 13
+NO DEFAULT INTERRUPT HANDLER REGISTERED
+Hello W10ms has passed
+orld!
 CREATING THREAD 1...
 esp = <2098112>
 done
@@ -73,170 +78,345 @@ Successfully added.
 Successfully added. 
 Successfully added. 
 STARTING THREAD 1 ...
+10ms has passed
+10ms has passed
 Thread: 0
-FUN 1 INVOKED!
+FUN 10ms has passed
+1 INVOKED!
 FUN 1 IN BURST[0]
-FUN 1: TICK [0]
+10ms has passed
+FUN 1: TICK 10ms has passed
+[0]
 FUN 1: TICK [1]
-Round Robin switching
-INTERRUPT NO: 13
-NO DEFAULT INTERRUPT HANDLER REGISTERED
+10ms has passed
+10ms has passed
 FUN 1: TICK [2]
+10ms has passed
+10ms has passed
 FUN 1: TICK [3]
 FUN 1: TICK [4]
+10ms has passed
 FUN 1: TICK [5]
 FUN 1: TICK [6]
+10ms has passed
 FUN 1: TICK [7]
 FUN 1: TICK [8]
+10ms has passed
 FUN 1: TICK [9]
-Round Robin switching
-FUN 1 IN BURST[1]
-FUN 1: TICK [0]
-FUN 1: TICK [1]
-FUN 1: TICK [2]
-FUN 1: TICK [3]
-FUN 1: TICK [4]
-FUN 1: TICK [5]
-FUN 1: TICK [6]
-FUN 1: TICK [7]
-FUN 1: TICK [8]
-FUN 1: TICK [9]
-FUN 1 IN BURST[2]
-FUN 1: TICK [0]
-Round Robin switching
-FUN 1: TICK [1]
-FUN 1: TICK [2]
-FUN 1: TICK [3]
-FUN 1: TICK [4]
-FUN 1: TICK [5]
-FUN 1: TICK [6]
-FUN 1: TICK [7]
-FUN 1: TICK [8]
-FUN 1: TICK [9]
-FUN 1 IN BURST[3]
-FUN 1: TICK [0]
-Round Robin switching
-FUN 1: TICK [1]
-FUN 1: TICK [2]
-FUN 1: TICK [3]
-FUN 1: TICK [4]
-FUN 1: TICK [5]
-FUN 1: TICK [6]
-FUN 1: TICK [7]
-FUN 1: TICK [8]
-FUN 1: TICK [9]
-FUN 1 IN BURST[4]
-FUN 1: TICK [0]
-FUN 1: TICK [1]
-Round Robin switching
-FUN 1: TICK [2]
-FUN 1: TICK [3]
-FUN 1: TICK [4]
-FUN 1: TICK [5]
-FUN 1: TICK [6]
-FUN 1: TICK [7]
-FUN 1: TICK [8]
-FUN 1: TICK [9]
-Round Robin switching
-FUN 1 IN BURST[5]
-FUN 1: TICK [0]
-FUN 1: TICK [1]
-FUN 1: TICK [2]
-FUN 1: TICK [3]
-FUN 1: TICK [4]
-FUN 1: TICK [5]
-FUN 1: TICK [6]
-FUN 1: TICK [7]
-FUN 1: TICK [8]
-FUN 1: TICK [9]
-FUN 1 IN BURST[6]
-FUN 1: TICK [0]
-FUN 1: TICK [1]
-Round Robin switching
-FUN 1: TICK [2]
-FUN 1: TICK [3]
-FUN 1: TICK [4]
-FUN 1: TICK [5]
-FUN 1: TICK [6]
-FUN 1: TICK [7]
-FUN 1: TICK [8]
-FUN 1: TICK [9]
-FUN 1 IN BURST[7]
-FUN 1: TICK [0]
-Round Robin switching
-FUN 1: TICK [1]
-FUN 1: TICK [2]
-FUN 1: TICK [3]
-FUN 1: TICK [4]
-FUN 1: TICK [5]
-FUN 1: TICK [6]
-FUN 1: TICK [7]
-FUN 1: TICK [8]
-FUN 1: TICK [9]
-FUN 1 IN BURST[8]
-FUN 1: TICK [0]
-FUN 1: TRound Robin switching
-ICK [1]
-FUN 1: TICK [2]
-FUN 1: TICK [3]
-FUN 1: TICK [4]
-FUN 1: TICK [5]
-FUN 1: TICK [6]
-FUN 1: TICK [7]
-FUN 1: TICK [8]
-FUN 1: TICK [9]
-FUN 1 IN BURST[9]
-FUN 1: TICK [0]
-Round Robin switching
-FUN 1: TICK [1]
-FUN 1: TICK [2]
-FUN 1: TICK [3]
-FUN 1: TICK [4]
-FUN 1: TICK [5]
-FUN 1: TICK [6]
-FUN 1: TICK [7]
-FUN 1: TICK [8]
-FUN 1: TICK [9]
-Terminating a thread ... 
-Thread: 1
+10ms has passed
+Successfully resumed. 
+T10ms has passed
+hread: 1
 FUN 2 INVOKED!
 FUN 2 IN BURST[0]
-Round Robin switching
+10ms has passed
+10ms has passed
 FUN 2: TICK [0]
+10ms has passed
+10ms has passed
 FUN 2: TICK [1]
 FUN 2: TICK [2]
+10ms has passed
 FUN 2: TICK [3]
+10ms has passed
 FUN 2: TICK [4]
 FUN 2: TICK [5]
+10ms has passed
 FUN 2: TICK [6]
+10ms has passed
 FUN 2: TICK [7]
+10ms has passed
+10ms has passed
+10ms has passed
 FUN 2: TICK [8]
-Round Robin switching
+10ms has passed
+10ms has passed
+10ms has passed
 FUN 2: TICK [9]
+Successfully resumed. 
+10ms has passed
+Thread: 2
+FUN 3 INVOKED!
+10ms has passed
+FUN 3 IN BURST[0]
+10ms has passed
+FUN 3: TICK [0]
+10ms has passed
+FUN 3: TICK [1]
+10ms has passed
+FUN 3: TICK [2]
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 3: TICK [3]
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 3: TICK [4]
+10ms has passed
+FUN 3: TICK [5]
+10ms has passed
+FUN 3: TICK [6]
+FUN 3: 10ms has passed
+TICK [7]
+FUN 3: TICK [8]
+FUN 3: TICK [9]
+10ms has passed
+Successfully resumed. 
+10ms has passed
+Thread: 3
+10ms has passed
+10ms has passed
+FUN 4 INVOKED!
+10ms has passed
+10ms has passed
+FUN 4 IN BURST[0]
+FUN 4: TICK [0]
+10ms has passed
+10ms has passed
+FUN 4: TICK [1]
+10ms has passed
+FUN 4: TICK [2]
+FUN 4: TICK [3]
+10ms has passed
+FUN 4: TICK [4]
+10ms has passed
+10ms has passed
+FUN 4: TICK [5]
+FUN 4: TICK [6]
+FUN 4: TICK [7]
+10ms has passed
+10ms has passed
+FUN 4: TICK [8]
+10ms has passed
+FUN 4: TICK [9]
+10ms has passed
+10ms has passed
+Successfully resumed. 
+Successfully yielded. 
+FUN 1 IN BURST[1]
+10ms has passed
+10ms has passed
+FUN 1: TICK [0]
+FUN 1: TICK [1]
+10ms has passed
+FUN 1: TICK [2]
+10ms has passed
+FUN 1: TICK [3]
+FUN 1: TICK [10ms has passed
+4]
+FUN 1: TICK [5]
+10ms has passed
+10ms has passed
+FUN 1: TICK [6]
+10ms has passed
+FUN 1: TICK [7]
+FUN 1: TIC10ms has passed
+K [8]
+FUN 1: TICK [9]
+Successfully resumed. 
+Successfully yielded. 
+10ms has passed
 FUN 2 IN BURST[1]
+10ms has passed
+10ms has passed
 FUN 2: TICK [0]
+FUN 2: TICK [1]
+10ms has passed
+FUN 2: TICK [2]
+FUN 2: TICK [3]
+10ms has passed
+10ms has passed
+FUN 2: TICK [4]
+10ms has passed
+10ms has passed
+FUN 2: TICK [5]
+FUN 2: TICK [6]
+10ms has passed
+FUN 2: TICK [7]
+10ms has passed
+10ms has passed
+FUN 2: TICK [8]
+FUN 2: TICK [9]
+10ms has passed
+Suc10ms has passed
+cessfully resumed. 
+Successfully yielded. 
+FUN 3 IN BURST[1]
+10ms has passed
+FUN 3: TICK [0]
+10ms has passed
+10ms has passed
+FUN 3: TICK [1]
+10ms has passed
+10ms has passed
+FUN 3: TICK [2]
+FUN 3: TICK [3]
+10ms has passed
+FUN 3: TICK [4]
+FUN 3: TICK [5]
+10ms has passed
+FUN 3: TICK [6]
+10ms has passed
+FUN 3: TICK [7]
+10ms has passed
+FUN 3: TICK [8]
+10ms has passed
+FUN 3: TICK [9]
+Successfully resumed. 
+10ms has passed
+10ms has passed
+10ms has passed
+Successfully yielded. 
+10ms has passed
+FUN 4 IN BURST[1]
+F10ms has passed
+UN 4: TICK [0]
+FUN 4: TICK [1]
+FUN 4: TICK [2]
+FUN 10ms has passed
+4: TICK [3]
+FUN 4: TICK [4]
+FUN 4: TICK [5]
+10ms has passed
+10ms has passed
+FUN 4: TICK [6]
+FUN 4: TICK [7]
+10ms has passed
+FUN 4: TICK [8]
+FUN 4: TICK [9]
+10ms has passed
+10ms has passed
+10ms has passed
+Successfully resumed. 
+10ms has passed
+Successfully yielded. 
+FUN 1 IN 10ms has passed
+BURST[2]
+FUN 1: TICK [0]
+FUN 1: TICK [1]
+FUN 1: 10ms has passed
+TICK [2]
+FUN 1: TICK [3]
+10ms has passed
+FUN 1: T10ms has passed
+ICK [4]
+FUN 1: TICK [5]
+FUN 1: TICK [6]
+10ms has passed
+FUN 1: TICK [7]
+10ms has passed
+10ms has passed
+FUN 1: TICK [8]
+FUN 1: TICK [9]
+10ms has passed
+10ms has passed
+Successfully resumed. 
+10ms has passed
+Successfully yielded. 
+10ms has passed
+FUN 2 IN BU10ms has passed
+RST[2]
+FUN 2: TICK [0]
+10ms has passed
+10ms has passed
 FUN 2: TICK [1]
 FUN 2: TICK [2]
 FUN 2: TICK [3]
+10ms has passed
 FUN 2: TICK [4]
 FUN 2: TICK [5]
+10ms has passed
+10ms has passed
+10ms has passed
 FUN 2: TICK [6]
-FUN 2: TICK [7]
-FUN 2: TICK [8]
-Round Robin switching
-FUN 2: TICK [9]
-FUN 2 IN BURST[2]
-FUN 2: TICK [0]
-FUN 2: TICK [1]
-FUN 2: TICK [2]
-FUN 2: TICK [3]
-FUN 2: TICK [4]
-FUN 2: TICK [5]
-FUN 2: TICK [6]
-FUN 2: TICK [7]
-Round Robin switching
+FUN 2: TIC10ms has passed
+K [7]
 FUN 2: TICK [8]
 FUN 2: TICK [9]
+10ms has passed
+Successfully resumed. 
+10ms has passed
+10ms has passed
+10ms has passed
+Successfully yielded. 
+FUN 3 IN BURST[2]
+10ms has passed
+FUN 3: TICK [0]
+FUN 3: TICK [1]
+10ms has passed
+10ms has passed
+FUN 3: TICK [2]
+10ms has passed
+10ms has passed
+FUN 3: TICK [3]
+FUN 3: TICK [4]
+FUN 3: TICK [5]
+10ms has passed
+FUN 3: T10ms has passed
+ICK [6]
+FUN 3: TICK [7]
+10ms has passed
+FUN 3: TICK [8]
+FUN 10ms has passed
+3: TICK [9]
+Successfully resumed. 
+10ms has passed
+Successfully yielded. 
+10ms has passed
+10ms has passed
+FUN 4 IN BURST[2]
+FUN 4: TICK [0]
+10ms has passed
+10ms has passed
+FUN 4: TICK [1]
+10ms has passed
+10ms has passed
+FUN 4: TICK [2]
+FUN 4: TICK [3]
+FUN 10ms has passed
+4: TICK [4]
+FUN 4: TICK [5]
+FUN 4: TICK [6]
+10ms has passed
+FUN 4: TICK [7]
+10ms has passed
+FUN 4: TICK [8]
+10ms has passed
+FUN 4: TICK [9]
+10ms has passed
+Successfully resumed. 
+Successfully yielded. 
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 1 IN BURST[3]
+10ms has passed
+FUN 1: TICK [0]
+FUN 1: TICK [1]
+FUN 1: TICK [2]
+FUN 1: TICK [3]
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 1: TICK [4]
+FUN 1: TICK [5]
+10ms has passed
+10ms has passed
+FUN 1: TICK [6]
+FUN 1: TICK [7]
+10ms has passed
+FUN 1: TICK [8]
+10ms has passed
+10ms has passed
+FUN 1: TICK [9]
+10ms has passed
+10ms has passed
+Successfully resumed. 
+Successfully yielded. 
+10ms has passed
+10ms has passed
 FUN 2 IN BURST[3]
 FUN 2: TICK [0]
 FUN 2: TICK [1]
@@ -245,10 +425,76 @@ FUN 2: TICK [3]
 FUN 2: TICK [4]
 FUN 2: TICK [5]
 FUN 2: TICK [6]
+10ms has passed
+10ms has passed
+10ms has passed
 FUN 2: TICK [7]
 FUN 2: TICK [8]
+10ms has passed
+10ms has passed
+10ms has passed
 FUN 2: TICK [9]
-Round Robin switching
+Successfu10ms has passed
+lly resumed. 
+Successfully yielded. 
+FUN 3 IN BURST[3]
+10ms has passed
+10ms has passed
+FUN 3: TICK [0]
+10ms has passed
+FUN 3: TICK [1]
+FUN 3: TICK [2]
+10ms has passed
+10ms has passed
+FUN 3: TICK [3]
+FUN 3: TICK [4]
+10ms has passed
+FUN 3: TICK [5]
+FUN 3: TICK [6]
+10ms has passed
+10ms has passed
+FUN 3: TICK10ms has passed
+ [7]
+10ms has passed
+FUN 3: TICK [8]
+10ms has passed
+FUN 3: TICK [9]
+Successfully resumed. 
+10ms has passed
+10ms has passed
+Successfully yielded. 
+FUN 4 IN BURST[3]
+FUN10ms has passed
+ 4: TICK [0]
+FUN 4: TICK [1]
+FUN 4: TICK [2]
+FUN 4: TICK [3]
+FUN 4: TICK [4]
+FUN 4: TICK [5]
+FUN 4: TICK [6]
+FUN 4: TICK [7]
+FUN 4: TICK [8]
+FUN 4: TICK [9]
+10ms has passed
+10ms has passed
+10ms has passed
+Successfully resumed. 
+Successfull10ms has passed
+y yielded. 
+FUN 1 IN BURST[4]
+FUN 1: TICK [0]
+10ms has passed
+FUN 1: TICK [1]
+FUN 1: TICK [2]
+FUN 1: TICK [3]
+FUN 1: TICK [4]
+FUN 1: TICK [5]
+FUN 1: TICK [6]
+FUN 1: TICK [7]
+FUN 1: TICK [8]
+FUN 1: TICK [9]
+Successfully resumed. 
+Successfully yielded. 
 FUN 2 IN BURST[4]
 FUN 2: TICK [0]
 FUN 2: TICK [1]
@@ -260,7 +506,47 @@ FUN 2: TICK [6]
 FUN 2: TICK [7]
 FUN 2: TICK [8]
 FUN 2: TICK [9]
-Round Robin switching
+Successfully resumed. 
+Successfully yielded. 
+FUN 3 IN BURST[4]
+FUN 3: TICK [0]
+FUN 3: TICK [1]
+FUN 3: TICK [2]
+FUN 3: TICK [3]
+FUN 3: TICK [4]
+FUN 3: TICK [5]
+FUN 3: TICK [6]
+FUN 3: TICK [7]
+FUN 3: TICK [8]
+FUN 3: TICK [9]
+Successfully resumed. 
+Successfully yielded. 
+FUN 4 IN BURST[4]
+FUN 4: TICK [0]
+FUN 4: TICK [1]
+FUN 4: TICK [2]
+FUN 4: TICK [3]
+FUN 4: TICK [4]
+FUN 4: TICK [5]
+FUN 4: TICK [6]
+FUN 4: TICK [7]
+FUN 4: TICK [8]
+FUN 4: TICK [9]
+Successfully resumed. 
+Successfully yielded. 
+FUN 1 IN BURST[5]
+FUN 1: TICK [0]
+FUN 1: TICK [1]
+FUN 1: TICK [2]
+FUN 1: TICK [3]
+FUN 1: TICK [4]
+FUN 1: TICK [5]
+FUN 1: TICK [6]
+FUN 1: TICK [7]
+FUN 1: TICK [8]
+FUN 1: TICK [9]
+Successfully resumed. 
+Successfully yielded. 
 FUN 2 IN BURST[5]
 FUN 2: TICK [0]
 FUN 2: TICK [1]
@@ -271,122 +557,13 @@ FUN 2: TICK [5]
 FUN 2: TICK [6]
 FUN 2: TICK [7]
 FUN 2: TICK [8]
-Round Robin switching
 FUN 2: TICK [9]
-FUN 2 IN BURST[6]
-FUN 2: TICK [0]
-FUN 2: TICK [1]
-FUN 2: TICK [2]
-FUN 2: TICK [3]
-FUN 2: TICK [4]
-FUN 2: TICK [5]
-FUN 2: TICK [6]
-FUN 2: TICK [7]
-FUN 2: TICK [8]
-FUN 2: TICK [9]
-FUN 2 IN BURST[7]
-FUN 2: TICK [0]
-Round Robin switching
-FUN 2: TICK [1]
-FUN 2: TICK [2]
-FUN 2: TICK [3]
-FUN 2: TICK [4]
-FUN 2: TICK [5]
-FUN 2: TICK [6]
-FUN 2: TICK [7]
-FUN 2: TICK [8]
-FUN 2: TICK [9]
-FUN 2 IN BURST[8]
-FUN 2: TICK [0]
-FUN 2: TICK [1]
-Round Robin switching
-FUN 2: TICK [2]
-FUN 2: TICK [3]
-FUN 2: TICK [4]
-FUN 2: TICK [5]
-FUN 2: TICK [6]
-FUN 2: TICK [7]
-FUN 2: TICK [8]
-FUN 2: TICK [9]
-FUN 2 IN BURST[9]
-FUN 2: TICK [0]
-FUN 2: TICK [1]
-FUN 2: TICK [2]
-FUN 2: TICK [3]
-FUN 2: TICK [4]
-Round Robin switching
-FUN 2: TICK [5]
-FUN 2: TICK [6]
-FUN 2: TICK [7]
-FUN 2: TICK [8]
-FUN 2: TICK [9]
-Terminating a thread ... 
-Thread: 2
-FUN 3 INVOKED!
-FUN 3 IN BURST[0]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[1]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[2]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-Round Robin switching
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[3]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-Round Robin switching
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[4]
-FUN 3:Round Robin switching
- TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
+Successfully resumed. 
+Successf10ms has passed
+ully yielded. 
 FUN 3 IN BURST[5]
 FUN 3: TICK [0]
 FUN 3: TICK [1]
-Round Robin switching
 FUN 3: TICK [2]
 FUN 3: TICK [3]
 FUN 3: TICK [4]
@@ -394,1214 +571,635 @@ FUN 3: TICK [5]
 FUN 3: TICK [6]
 FUN 3: TICK [7]
 FUN 3: TICK [8]
-FUN 3: Round Robin switching
-TICK [9]
+FUN 3: TICK [9]
+Successfully resumed. 
+Successfully yielded. 
+FUN 4 IN BURST[5]
+FUN 4: TICK [0]
+FUN 4: TICK [1]
+FUN 4: TICK [2]
+FUN 4: TICK [3]
+FUN 4: TICK [4]
+FUN 4: TICK [5]
+FUN 4: TICK [6]
+FUN 4: TICK [7]
+FUN 4: TICK [8]
+FUN 4: TICK [9]
+Successfully resumed. 
+Successfully yielded. 
+FUN 1 IN BURST[6]
+FUN 1: TICK [0]
+FUN 1: TICK [1]
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 1: TICK [2]
+10ms has passed
+10ms has passed
+FUN 1: TICK [3]
+10ms has passed
+FUN 1: TICK [4]
+10ms has passed
+10ms has passed
+FUN 1: TICK [5]
+FUN 1: TICK [6]
+FUN 1: TICK [7]
+10ms has passed
+FUN 1: TICK [8]
+FUN 1: TICK [9]
+10ms has passed
+Successfully r10ms has passed
+esumed. 
+Successfully yielded. 
+10ms has passed
+FUN 2 IN BURST[6]
+FUN 2: TICK [0]
+FUN 2: TICK [1]
+10ms has passed
+10ms has passed
+FUN 10ms has passed
+2: TICK [2]
+FUN 2: TICK [3]
+10ms has passed
+FUN 2: TICK [4]
+10ms has passed
+FUN 2: TICK [5]
+FUN 2: T10ms has passed
+ICK [6]
+FUN 2:10ms has passed
+ TICK [7]
+FUN 2: TICK [8]
+FUN 2: TICK [9]
+10ms has passed
+Successfully resumed. 
+10ms has passed
+Successfully yielded. 
+10ms has passed
+10ms has passed
+10ms has passed
 FUN 3 IN BURST[6]
+10ms has passed
+10ms has passed
 FUN 3: TICK [0]
 FUN 3: TICK [1]
 FUN 3: TICK [2]
+10ms has passed
+10ms has passed
 FUN 3: TICK [3]
+10ms has passed
 FUN 3: TICK [4]
 FUN 3: TICK [5]
+10ms has passed
 FUN 3: TICK [6]
 FUN 3: TICK [7]
+10ms has passed
+10ms has passed
 FUN 3: TICK [8]
 FUN 3: TICK [9]
+10ms has passed
+10ms has passed
+10ms has passed
+Successfully resumed. 
+Successfully yielded. 
+FUN 4 IN BURST[6]
+10ms has passed
+FUN 4: TICK [0]
+FUN 4: TICK [1]
+10ms has passed
+10ms has passed
+FUN 4: TICK [2]
+FUN 4: TICK [3]
+10ms has passed
+FUN 4: TICK [4]
+FUN 4: TICK [5]
+10ms has passed
+10ms has passed
+FUN 4: TICK [6]
+FUN 4: TICK [7]
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 4: TICK [8]
+FUN 4: TICK [9]
+10ms has passed
+Successfully resumed. 
+10ms has passed
+Successfully yielded. 
+10ms has passed
+FUN 1 IN BURST[7]
+FUN 1: TICK [0]
+10ms has passed
+10ms has passed
+FUN 1: TICK [1]
+FUN 1: TICK [2]
+10ms has passed
+FUN 1: TICK [3]
+FUN 1: TICK [4]
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 1: TICK [5]
+10ms has passed
+FUN 1: TICK [6]
+FUN 1: TICK [7]
+10ms has passed
+FUN 1: TICK [8]
+10ms has passed
+10ms has passed
+FUN 1: TICK [9]
+Successfully resumed. 
+Suc10ms has passed
+cessfully yielded. 
+FUN 2 IN BURST[7]
+FUN 2: TICK [0]
+10ms has passed
+FUN 2: TICK [1]
+FUN 2: TICK [2]
+10ms has passed
+FUN 2: TICK [3]
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 2: TICK [4]
+FUN 2: TICK [5]
+10ms has passed
+FUN 2: TICK [6]
+FUN 2: TICK [7]
+10ms has passed
+FUN 2: TICK [8]
+FUN 2: TICK [9]
+10ms has passed
+Succe10ms has passed
+ssfully resumed. 
+Successfully yielded. 
+10ms has passed
 FUN 3 IN BURST[7]
-Round Robin switching
 FUN 3: TICK [0]
 FUN 3: TICK [1]
+10ms has passed
+10ms has passed
 FUN 3: TICK [2]
+10ms has passed
 FUN 3: TICK [3]
+10ms has passed
+10ms has passed
 FUN 3: TICK [4]
 FUN 3: TICK [5]
 FUN 3: TICK [6]
+10ms has passed
 FUN 3: TICK [7]
-FUN 3: TICK [8]
+FUN 3: T10ms has passed
+ICK [8]
 FUN 3: TICK [9]
-Round Robin switching
+10ms has passed
+Successfully resumed. 
+Successfully yielded.10ms has passed
+ 
+FUN 4 IN BURST[7]
+FUN 4: TICK [0]
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 4: TICK [1]
+FUN 4: TICK [10ms has passed
+2]
+FUN 4: TICK [3]
+10ms has passed
+FUN 4: TICK [4]
+10ms has passed
+FUN 4: TICK [5]
+10ms has passed
+FUN 4: TICK [6]
+10ms has passed
+FUN 4: TICK [7]
+FUN 4: TICK [8]
+10ms has passed
+FUN 4: TICK [9]
+10ms has passed
+10ms has passed
+Successfu10ms has passed
+lly resumed. 
+Successfully yielded. 
+10ms has passed
+FUN 1 IN BURST[8]
+FUN 1: TICK [0]
+FUN 1: TICK [1]
+10ms has passed
+10ms has passed
+FUN 1: TICK [2]
+10ms has passed
+FUN 1: TICK [3]
+FUN 1: TICK [4]
+10ms has passed
+FUN 1: TICK [5]
+10ms has passed
+10ms has passed
+FUN 1: TICK [6]
+FUN 1: TICK [7]
+10ms has passed
+10ms has passed
+FUN 1: TICK [8]
+10ms has passed
+FUN 1: TICK [9]
+Successfully resumed. 
+10ms has passed
+Successfully yielded. 
+10ms has passed
+FUN 2 10ms has passed
+IN BURST[8]
+FUN 2: TICK [0]
+FUN 2: TICK [1]
+FUN 2: TI10ms has passed
+CK [2]
+FUN 2: TICK [3]
+FUN 2: TICK [4]
+10ms has passed
+10ms has passed
+FUN 2: TICK [5]
+FUN 2: TICK [6]
+FUN 2: TICK [7]
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 2: TICK [8]
+FUN 2: TICK [9]
+Successfully resumed. 
+10ms has passed
+Successfully yielded. 
+10ms has passed
 FUN 3 IN BURST[8]
+10ms has passed
 FUN 3: TICK [0]
+10ms has passed
 FUN 3: TICK [1]
 FUN 3: TICK [2]
+10ms has passed
 FUN 3: TICK [3]
-FUN 3: TICK [4]
+10ms has passed
+FUN 3: TICK [410ms has passed
+]
+10ms has passed
+10ms has passed
 FUN 3: TICK [5]
 FUN 3: TICK [6]
 FUN 3: TICK [7]
+10ms has passed
 FUN 3: TICK [8]
+10ms has passed
+10ms has passed
 FUN 3: TICK [9]
+10ms has passed
+10ms has passed
+Successfully resumed. 
+Successfully yielded. 
+FUN 4 IN BURST[8]
+10ms has passed
+10ms has passed
+FUN 4: TICK [0]
+10ms has passed
+10ms has passed
+FUN 4: TICK [1]
+FUN 4: TICK [2]
+FUN 4: TICK [3]
+10ms has passed
+10ms has passed
+FUN 4: TICK [4]
+10ms has passed
+FUN 4: TICK [5]
+10ms has passed
+FUN 4: TICK [6]
+FUN 4: TICK [7]
+10ms has passed
+FUN 4: TICK [8]
+FUN 4: TICK [9]
+10ms has passed
+10ms has passed
+Successfully resumed. 
+Successfully yielded. 
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 1 IN BURST[9]
+FUN 1: TICK [0]
+10ms has passed
+FUN 1: TICK [1]
+10ms has passed
+FUN 1: TICK [2]
+FUN 1: TICK [3]
+10ms has passed
+FUN 1: TICK [4]
+FUN 1: TICK [5]
+10ms has passed
+10ms has passed
+FUN 1: TICK [6]
+FUN 1: TICK [7]
+10ms has passed
+FUN 1: TICK [8]
+FUN 1: TICK [9]
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+Successfully resumed. 
+Successfully yielded. 
+FUN 2 IN BURST[9]
+10ms has passed
+FUN 2: TICK [0]
+10ms has passed
+FUN 2: TICK [1]
+10ms has passed
+FUN 2: TICK [2]
+10ms has passed
+FUN 2: TICK [3]
+FUN 2: TICK [4]
+10ms has passed
+10ms has passed
+FUN 2: TICK [5]
+FUN 2: T10ms has passed
+ICK [6]10ms has passed
+
+FUN 2: TICK [7]
+10ms has passed
+FUN 2: TICK [8]
+FUN 2: TICK [9]
+10ms has passed
+Successfully resumed. 
+10ms has passed
+10ms has passed
+Successfully yielded. 
 FUN 3 IN BURST[9]
-Round Robin switching
+10ms has passed
 FUN 3: TICK [0]
+10ms has passed
 FUN 3: TICK [1]
 FUN 3: TICK [2]
+10ms has passed
 FUN 3: TICK [3]
 FUN 3: TICK [4]
+10ms has passed
 FUN 3: TICK [5]
+10ms has passed
 FUN 3: TICK [6]
 FUN 3: TICK [7]
+10ms has passed
+10ms has passed
 FUN 3: TICK [8]
-Round Robin switching
 FUN 3: TICK [9]
+Successful10ms has passed
+ly resumed. 
+Successfully yielded. 
+FUN 4 IN BURST[9]
+10ms has passed
+FUN 4: TICK [0]
+FUN 4: TICK [1]
+10ms has passed
+FUN 4: TICK [2]
+FUN 4: TICK [3]
+10ms has passed
+FUN 4: TICK [4]
+10ms has passed
+FUN 4: TICK [5]
+10ms has passed
+FUN 4: TICK [6]
+10ms has passed
+10ms has passed
+FUN 4: TICK [7]
+10ms has passed
+FUN 4: TICK [8]
+FUN 4: TICK [9]
+10ms has passed
+Successfully resumed. 
+10ms has passed
+Successfully yielded. 
+10ms has passed
+Successfully terminated. 
+10ms has passed
+Successfully yielded. 
+Successfully terminated. 
+10ms has passed
+Successfully yielded. 
+10ms has passed
 FUN 3 IN BURST[10]
 FUN 3: TICK [0]
+10ms has passed
 FUN 3: TICK [1]
 FUN 3: TICK [2]
+10ms has passed
+10ms has passed
+10ms has passed
 FUN 3: TICK [3]
 FUN 3: TICK [4]
+10ms has passed
 FUN 3: TICK [5]
+10ms has passed
 FUN 3: TICK [6]
+10ms has passed
 FUN 3: TICK [7]
 FUN 3: TICK [8]
 FUN 3: TICK [9]
-FUN 3 IN Round Robin switching
-BURST[11]
+10ms has passed
+Successfully resumed. 
+10ms has passed
+Successfully yielded. 
+FUN 4 IN BURST[10]
+10ms has passed
+10ms has passed
+FUN 4: TICK [0]
+10ms has passed
+FUN 4: TICK [1]
+FUN 4: TICK [2]
+10ms has passed
+10ms has passed
+FUN 4: TICK [3]
+10ms has passed
+FUN 4: TICK [4]
+10ms has passed
+10ms has passed
+FUN 4: TICK [5]
+FUN 4: TICK [6]
+FUN 4: TICK [7]
+10ms has passed
+FUN 4: TICK [8]
+FUN 4: TICK [9]
+10ms has passed
+10ms has passed
+Successfully resumed. 
+Successfully yielded. 
+FUN 10ms has passed
+3 IN BURST[11]
 FUN 3: TICK [0]
 FUN 3: TICK [1]
+10ms has passed
+10ms has passed
 FUN 3: TICK [2]
+10ms has passed
+10ms has passed
 FUN 3: TICK [3]
 FUN 3: TICK [4]
+10ms has passed
 FUN 3: TICK [5]
+10ms has passed
 FUN 3: TICK [6]
 FUN 3: TICK [7]
-Round Robin switching
+10ms has passed
 FUN 3: TICK [8]
 FUN 3: TICK [9]
+10ms has passed
+Successfully resumed. 
+10ms has passed
+Successfully yielded. 
+10ms has passed
+10ms has passed
+FUN 4 IN BURST[11]
+10ms has passed
+FUN 4: TICK [0]
+10ms has passed
+10ms has passed
+FUN 4: TICK [1]
+FUN 4: TICK [2]
+10ms has passed
+FUN 4: TICK [3]
+FUN 4: TICK [4]
+10ms has passed
+FUN 4: TICK [5]
+10ms has passed
+10ms has passed
+FUN 4: TICK [6]
+FUN 4: TICK [7]
+FUN 4: TICK [8]
+10ms has passed
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 4: TICK [9]
+Successfully resumed. 
+Successfully yielded. 
+10ms has passed
 FUN 3 IN BURST[12]
 FUN 3: TICK [0]
+10ms has passed
+10ms has passed
 FUN 3: TICK [1]
 FUN 3: TICK [2]
+10ms has passed
 FUN 3: TICK [3]
+10ms has passed
 FUN 3: TICK [4]
+10ms has passed
 FUN 3: TICK [5]
-FUN 3: TICK [6]
+10ms has passed
+F10ms has passed
+UN 3: TICK [6]
+10ms has passed
 FUN 3: TICK [7]
 FUN 3: TICK [8]
-Round Robin switching
+10ms has passed
+10ms has passed
 FUN 3: TICK [9]
+Successfully resumed. 
+Successfully yielded. 
+FUN 4 IN BURST[12]
+10ms has passed
+10ms has passed
+FUN 4: TICK [0]
+FUN 4: TICK [1]
+FUN 4: TICK [2]
+10ms has passed
+10ms has passed
+FUN 4: TICK [3]
+FUN 4: TICK [4]
+10ms has passed
+10ms has passed
+FUN 410ms has passed
+: TICK [5]
+FUN 4: TICK [6]
+10ms has passed
+FUN 4: TICK [7]
+FUN 4: TICK [8]
+10ms has passed
+10ms has passed
+FUN 4: TICK [9]
+Successfully resumed. 
+Successfully yielded. 
+10ms has passed
+10ms has passed
 FUN 3 IN BURST[13]
 FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-Round Robin switching
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[14]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICKRound Robin switching
- [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[15]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-Round Robin switching
-FUN 3: TICK [9]
-FUN 3 IN BURST[16]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[17]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-Round Robin switching
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[18]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[19]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[20]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-Round Robin switching
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[21]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [Round Robin switching
-5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[22]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-Round Robin switching
-FUN 3: TICK [9]
-FUN 3 IN BURST[23]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-Round Robin switching
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[24]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[25]
-FUN 3: TICK [0]
-Round Robin switching
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[26]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[27]
-FUN 3: TICK [0]
-Round Robin switching
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-Round Robin switching
-FUN 3 IN BURST[28]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[29]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-Round Robin switching
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[30]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[31]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-Round Robin switching
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[32]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[33]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-Round Robin switching
-FUN 3: TICK [9]
-FUN 3 IN BURST[34]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-Round Robin switching
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[35]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUNRound Robin switching
- 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[36]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-Round Robin switching
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-Round Robin switching
-FUN 3 IN BURST[37]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-Round Robin switching
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[38]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-Round Robin switching
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[39]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[40]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[41]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-Round Robin switching
-FUN 3 IN BURST[42]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[43]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-Round Robin switching
-FUN 3: TICK [9]
-FUN 3 IN BURST[44]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[45]
-FUN 3: TICK [0]
-Round Robin switching
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[46]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-Round Robin switching
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[47]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-Round Robin switching
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[48]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-Round Robin switching
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[49]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[50]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-Round Robin switching
-FUN 3: TICK [9]
-FUN 3 IN BURST[51]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-Round Robin switching
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[52]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-Round Robin switching
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[53]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-Round Robin switching
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[54]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-Round Robin switching
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-Round Robin switching
-FUN 3 IN BURST[55]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-Round Robin switching
-FUN 3 IN BURST[56]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-Round Robin switching
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[57]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-Round Robin switching
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[58]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-Round Robin switching
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-Round Robin switching
-FUN 3 IN BURST[59]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUNRound Robin switching
- 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[60]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-Round Robin switching
-FUN 3: TICK [9]
-FUN 3 IN BURST[61]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-Round Robin switching
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[62]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-Round Robin switching
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[63]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-Round Robin switching
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[64]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-Round Robin switching
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[65]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[66]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-Round Robin switching
-FUN 3: TICK [9]
-FUN 3 IN BURST[67]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[68]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-Round Robin switching
-FUN 3: TICK [9]
-FUN 3 IN BURST[69]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-Round Robin switching
-FUN 3: TICK [9]
-FUN 3 IN BURST[70]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-Round Robin switching
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[71]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TRound Robin switching
-ICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[72]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[73]
-FUN 3: TICK [Round Robin switching
-0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[74]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-Round Robin switching
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[75]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[76]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-Round Robin switching
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[77]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[78]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[79]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[80]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FRound Robin switching
-UN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[81]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-Round Robin switching
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[82]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-Round Robin switching
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[83]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-Round Robin switching
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[84]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-Round Robin switching
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-Round Robin switching
-FUN 3 IN BURST[85]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[86]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-Round Robin switching
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[87]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-Round Robin switching
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[88]
-FUN 3: TICK [0]
-Round Robin switching
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-Round Robin switching
-FUN 3 IN BURST[89]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-Round Robin switching
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[90]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-Round Robin switching
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[91]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-Round Robin switching
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[92]
-FUN 3: TICK [0]
-Round Robin switching
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[93]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-Round Robin switching
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[94]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-Round Robin switching
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[95]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-Round Robin switching
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[96]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-Round Robin switching
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[97]
-FUN 3: TICK [0]
-Round Robin switching
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICKRound Robin switching
- [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[98]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-Round Robin switching
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[99]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[100]
-Round Robin switching
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-Round Robin switching
-FUN 3 IN BURST[101]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-Round Robin switching
-FUN 3 IN BURST[102]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-Round Robin switching
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[103]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-Round Robin switching
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-FUN 3 IN BURST[104]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
-FUN 3: TICK [2]
-FUN 3: TICK [3]
-Round Robin switching
-FUN 3: TICK [4]
-FUN 3: TICK [5]
-FUN 3: TICK [6]
-FUN 3: TICK [7]
-FUN 3: TICK [8]
-FUN 3: TICK [9]
-Round Robin switching
-FUN 3 IN BURST[105]
-FUN 3: TICK [0]
-FUN 3: TICK [1]
+10ms has passed
+FUN 3: TICK [1]
+FUN 3: TICK [2]
+10ms has passed
+10ms has passed
+10ms has passed
+FUN 3: TICK [3]
+10ms has passed
+FUN 3: TICK [4]
+10ms has passed
+FUN 3: TICK [5]
+FUN 3: TICK [6]
+FUN 3: TICK [7]
+10ms has passed
+FUN 3: TICK [8]
+10ms has passed
+10ms has passed
+FUN 3: TICK [9]
+Successfully resumed. 
+10ms has passed
+Successfully yielded. 
+FUN 4 IN BURST[13]
+10ms has passed
+10ms has passed
+FUN 4: TICK [0]
+10ms has passed
+10ms has passed
+FUN 4: TICK [1]
+FUN 4: TICK [2]
+10ms has passed
+FUN 4: TICK [3]
+FUN 4: TICK [4]
+10ms has passed
+FUN 4: TICK [5]
+10ms has passed
+10ms has passed
+FUN 4: TICK [6]
+FUN 4: TICK [7]
+FUN 4: TICK [8]
+FUN 4: TICK [9]
+Successfully resumed. 
+Successfully yielded. 
+FUN 310ms has passed
+10ms has passed
+ IN BURST[14]
+10ms has passed
+10ms has passed
+FUN 3: TICK [0]
+FUN 3: TICK [1]
+10ms has passed
+10ms has passed
 FUN 3: TICK [2]
-FUN 3: TICK [3]
-FUN 3: TICK [4]
-FUN 3: T

@@ -59,9 +59,9 @@ void SimpleTimer::handle_interrupt(REGS *_r) {
     /* Whenever a second is over, we update counter accordingly. */
     if (ticks >= (hz/100) )
     {
-        seconds++;
+        seconds+= 0.01;
         ticks = 0;
-        //Console::puts("10ms has passed\n");
+        Console::puts("10ms has passed\n");
 	//Machine::outportb(0xe9, "10ms has passed\n");
     }
 }

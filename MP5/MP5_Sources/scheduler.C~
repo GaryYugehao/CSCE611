@@ -53,10 +53,13 @@ FIFOQ* FIFOQ::getNext(){
 	return next;	
 }
 void FIFOQ::addTail(Thread* input_thread){
+	//No thread in current ready queue
 	if(thread == NULL && next == NULL){
 		thread = input_thread;
+	//We already arrived the ready quque tail
 	}else if(thread != NULL && next == NULL){
 		next = new FIFOQ(input_thread);
+	//We haven't arrived the ready queue tail	
 	}else{
 		next->addTail(input_thread);
 	}
@@ -64,14 +67,20 @@ void FIFOQ::addTail(Thread* input_thread){
  }
 Thread* FIFOQ::popHead(){
 	Thread* res = NULL;
+	//There is only one thread in the ready queue
 	if(thread != NULL && next == NULL){
 		res = thread;
 		thread = NULL;
+	//more than one thread in the ready queue
 	}else if(thread !=NULL && next != NULL){
+		//store the head thread in the ready
 		res = thread;
 		thread = next->thread;
+		//set the head thread as the second thread
 		FIFOQ* nextFIFOQ = next;
+		//set the head thread's next pointer to the third one
 		next = nextFIFOQ->next;
+		//remove the second thread
 		delete nextFIFOQ;
 	}
 	return res;
@@ -153,11 +162,18 @@ void Scheduler::terminate(Thread * _thread) {
 	
 	FIFOQ *nextThread = NULL;
 	FIFOQ *currentThread = &ready_queue;
-	
+	//traverse all the threads in the ready queue
+	Thread* currentT = currentThread->getThread();
+	if(currentT->ThreadId() == _thread->ThreadId()){
+		Machine::disable_interrupts();
+		currentThread->popHead();
+	}
 	while(currentThread->getNext() != NULL){
 		nextThread = currentThread->getNext();
 		Thread* nextT = nextThread->getThread();
+		//if the next thread is our target thread
 		if (nextT->ThreadId() == _thread->ThreadId()){
+			//repeat what we have done in the popHead to 
 			Machine::disable_interrupts();
 			currentThread->setNext(nextThread->getNext());
 			len_queue -= 1;
@@ -165,20 +181,10 @@ void Scheduler::terminate(Thread * _thread) {
 		}else{
 			currentThread = nextThread;
 		}
-	}/*
-	for (int i=0; i<len_queue; ++i){
-		Thread* cur_thread = ready_queue.popHead();
-		if (cur_thread->ThreadId() == _thread->ThreadId()){
-			len_queue -= 1;
-		}else{
-			ready_queue.addTail(temp);
-		}
 	}
-*/
-
 	Machine::enable_interrupts(); 
 
-	Console::puts("Terminating a thread ... \n");
+	Console::puts("Successfully terminated. \n");
 
 }
 
