@@ -166,21 +166,23 @@ void Scheduler::terminate(Thread * _thread) {
 	Thread* currentT = currentThread->getThread();
 	if(currentT->ThreadId() == _thread->ThreadId()){
 		Machine::disable_interrupts();
-		currentThread->popHead()
-	}
-	//If not, traverse all the threads in the ready queue
-	while(currentThread->getNext() != NULL){
-		nextThread = currentThread->getNext();
-		Thread* nextT = nextThread->getThread();
-		//if the next thread is our target thread
-		if (nextT->ThreadId() == _thread->ThreadId()){
-			//repeat what we have done in the popHead to 
-			Machine::disable_interrupts();
-			currentThread->setNext(nextThread->getNext());
-			len_queue -= 1;
-			break;
-		}else{
-			currentThread = nextThread;
+		currentThread->popHead();
+		len_queu -= 1;
+	}else{
+		//If not, traverse all the threads in the ready queue
+		while(currentThread->getNext() != NULL){
+			nextThread = currentThread->getNext();
+			Thread* nextT = nextThread->getThread();
+			//if the next thread is our target thread
+			if (nextT->ThreadId() == _thread->ThreadId()){
+				//repeat what we have done in the popHead to 
+				Machine::disable_interrupts();
+				currentThread->setNext(nextThread->getNext());
+				len_queue -= 1;
+				break;
+			}else{
+				currentThread = nextThread;
+			}
 		}
 	}
 	Machine::enable_interrupts(); 
