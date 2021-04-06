@@ -166,7 +166,7 @@ void Scheduler::terminate(Thread * _thread) {
 	Thread* currentT = currentThread->getThread();
 	if(currentT->ThreadId() == _thread->ThreadId()){
 		Machine::disable_interrupts();
-		currentThread->popHead()
+		currentThread->popHead();
 	}
 	//If not, traverse all the threads in the ready queue
 	while(currentThread->getNext() != NULL){
@@ -183,6 +183,7 @@ void Scheduler::terminate(Thread * _thread) {
 			currentThread = nextThread;
 		}
 	}
+
 	Machine::enable_interrupts(); 
 
 	Console::puts("Successfully terminated. \n");

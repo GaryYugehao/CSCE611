@@ -77,9 +77,9 @@ static void thread_shutdown() {
         Machine::disable_interrupts();
     }
 
-    SYSTEM_SCHEDULER->terminate(Thread::CurrentThread()); //remove the current thread from the scheduler
-    delete current_thread; // 
-    SYSTEM_SCHEDULER->yield(); // give up CPU to other thread
+    SYSTEM_SCHEDULER->terminate(Thread::CurrentThread()); 
+    delete current_thread; 
+    SYSTEM_SCHEDULER->yield(); 
 
     //assert(false);
     /* Let's not worry about it for now. 
