@@ -40,7 +40,7 @@ BlockingDisk::BlockingDisk(DISK_ID _disk_id, unsigned int _size)
 /*--------------------------------------------------------------------------*/
 void BlockingDisk::wait_until_ready(){
 	if( not SimpleDisk::is_ready()){
-		Thread* cur = Thread::CurrentThread();
+		Thread* cur = Thread::CuurrentThread();
 		this->block_queue_addTail(cur);
 		SYSTEM_SCHEDULER->yield();
 	}

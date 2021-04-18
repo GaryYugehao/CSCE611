@@ -34,7 +34,7 @@
 /*--------------------------------------------------------------------------*/
 /* B l o c k i n g D i s k  */
 /*--------------------------------------------------------------------------*/
-class FIFOQ;
+
 class BlockingDisk : public SimpleDisk {
 protected:
 	void wait_until_ready();
