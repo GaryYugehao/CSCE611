@@ -22,6 +22,7 @@
 #include "utils.H"
 #include "console.H"
 #include "blocking_disk.H"
+#include "machine.H"
 
 extern Scheduler * SYSTEM_SCHEDULER;
 /*--------------------------------------------------------------------------*/
@@ -30,7 +31,6 @@ extern Scheduler * SYSTEM_SCHEDULER;
 
 BlockingDisk::BlockingDisk(DISK_ID _disk_id, unsigned int _size) 
   : SimpleDisk(_disk_id, _size) {
-
 	this->block_queue = new FIFOQ();
 	len_block = 0;
 }
@@ -38,7 +38,9 @@ BlockingDisk::BlockingDisk(DISK_ID _disk_id, unsigned int _size)
 /*--------------------------------------------------------------------------*/
 /* SIMPLE_DISK FUNCTIONS */
 /*--------------------------------------------------------------------------*/
-void BlockingDisk::wait_until_ready(){
+
+
+void BlockingDisk::wait_until_ready_block(){
 	if( not SimpleDisk::is_ready()){
 		Thread* cur = Thread::CurrentThread();
 		this->block_queue_addTail(cur);
@@ -63,14 +65,36 @@ bool BlockingDisk::is_ready(){
 
 void BlockingDisk::read(unsigned long _block_no, unsigned char * _buf) {
 
-  SimpleDisk::read(_block_no, _buf);
+  //SimpleDisk::read(_block_no, _buf);
+      issue_operation(READ, _block_no);
+
+  wait_until_ready_block();
+
+  /* read data from port */
+  int i;
+  unsigned short tmpw;
+  for (i = 0; i < 256; i++) {
+    tmpw = Machine::inportw(0x1F0);
+    _buf[i*2]   = (unsigned char)tmpw;
+    _buf[i*2+1] = (unsigned char)(tmpw >> 8);
+  }
   Console::puts("Successfully read. \n");
 
 }
 
 
 void BlockingDisk::write(unsigned long _block_no, unsigned char * _buf) {
+      issue_operation(WRITE, _block_no);
 
-  SimpleDisk::write(_block_no, _buf);
+  wait_until_ready_block();
+
+  /* write data to port */
+  int i; 
+  unsigned short tmpw;
+  for (i = 0; i < 256; i++) {
+    tmpw = _buf[2*i] | (_buf[2*i+1] << 8);
+    Machine::outportw(0x1F0, tmpw);
+  }
+  //SimpleDisk::write(_block_no, _buf);
   Console::puts("Successfully write. \n");
 }

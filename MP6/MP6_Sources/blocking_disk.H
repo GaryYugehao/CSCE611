@@ -37,8 +37,9 @@
 class FIFOQ;
 class BlockingDisk : public SimpleDisk {
 protected:
-	void wait_until_ready();
+	void wait_until_ready_block();
 	void block_queue_addTail(Thread * _thread);
+	
 public:
    FIFOQ* block_queue;
    int len_block;

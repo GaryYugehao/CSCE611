@@ -50,7 +50,7 @@ private:
 
      unsigned int disk_size;          /* In Byte */
 
-     //void issue_operation(DISK_OPERATION _op, unsigned long _block_no);
+     void issue_operation(DISK_OPERATION _op, unsigned long _block_no);
      /* Send a sequence of commands to the controller to initialize the READ/WRITE 
         operation. This operation is called by read() and write(). */ 
         
@@ -71,7 +71,7 @@ protected:
         and return to check later. */
 
 public:
-	void issue_operation(DISK_OPERATION _op, unsigned long _block_no);
+
    SimpleDisk(DISK_ID _disk_id, unsigned int _size); 
    /* Creates a SimpleDisk device with the given size connected to the MASTER or 
       SLAVE slot of the primary ATA controller.
