@@ -33,7 +33,7 @@
 /*--------------------------------------------------------------------------*/
 /* class  F i l e   */
 /*--------------------------------------------------------------------------*/
-class FileSystem;
+
 struct inode;
 extern FileSystem * FILE_SYSTEM;
 class File  {
@@ -48,7 +48,7 @@ public:
     File(inode * _inode);
     /* Constructor for the file handle. Set the ’current
      position’ to be at the beginning of the file. */
-    inode * inode;
+    inode * cur_inode;
     int blk_idx;
     
     

@@ -34,6 +34,7 @@ File::File(inode * _inode) {
 	cur_inode = (inode*) new inode();
 	memcpy((unsigned char*)cur_inode, (unsigned char*)_inode, sizeof(inode));
 	blk_idx = 0;
+	//Some initialization work to do.
 }
 
 /*--------------------------------------------------------------------------*/
@@ -45,11 +46,15 @@ int File::Read(unsigned int _n, char * _buf) {
 	char temp_buffer[512];
 	memset(temp_buffer, 0, 512);
 	unsigned int read_cnt = 0;
+	//When it isn't the end of the file.
 	while(not EoF() && read_cnt < _n){
+		//Read information of the file in current block.
 		FILE_SYSTEM->disk->read(cur_inode->loc[blk_idx++], (unsigned char*)temp_buffer);
+		//If the file opccupied all space
 		if((_n-read_cnt) > 512){
 			memcpy(_buf+read_cnt, temp_buffer, 512);
 			read_cnt += 512;
+		//If only occupy only a part of the space.
 		}else{
 			memcpy(_buf+read_cnt, (char*)temp_buffer, (_n-read_cnt));
 			read_cnt += (_n-read_cnt);
@@ -66,17 +71,20 @@ void File::Write(unsigned int _n, const char * _buf) {
 	char temp_buffer[512];
 
 	unsigned int write_cnt = 0;
+	//When we haven't written all the file into it.
 	while(write_cnt < _n){
+		//find the next valid block, occupy it and add its position to the inode.
 		int new_blk_head = FILE_SYSTEM->next_valid();
 		FILE_SYSTEM->occupy(new_blk_head);
-		cur_inode->loc[cur_inode->len] = new_blk_head;
+		cur_inode->loc[cur_inode->len++] = new_blk_head;
 		char temp_buffer[512];
 		memset(temp_buffer, 0, 512);
-
+		//If we have to occupy all the spaces
 		if((_n-write_cnt) > 512){
 			memcpy(temp_buffer, _buf, 512);
 			FILE_SYSTEM->disk->write(new_blk_head, (unsigned char *)temp_buffer);
 			write_cnt += 512;
+		//If we only need to occupy a part of it.
 		}else{
 			memcpy(temp_buffer, _buf, (_n-write_cnt));
 			FILE_SYSTEM->disk->write(new_blk_head, (unsigned char *)temp_buffer);
@@ -98,6 +106,7 @@ void File::Reset() {
 void File::Rewrite() {
     Console::puts("erase content of file\n");
     //assert(false);
+	//release the occupied blocks space of the file.
 	blk_idx = 0;
 	for(int i =0; cur_inode->len;i++){
 		FILE_SYSTEM->release(cur_inode->loc[i]);
@@ -109,8 +118,10 @@ void File::Rewrite() {
 bool File::EoF() {
     Console::puts("testing end-of-file condition\n");
     //assert(false);
+	//IF the length of current inode is 0, or we exceed the block index, return True.
 	if(cur_inode->len ==0 ||((cur_inode->len)<blk_idx)){
 		return true;
 	}
+	//Otherwise, not the end of the file.
 	return false;
 }

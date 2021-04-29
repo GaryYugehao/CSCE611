@@ -24,9 +24,9 @@
 /*--------------------------------------------------------------------------*/
 /* INCLUDES */
 /*--------------------------------------------------------------------------*/
-
-#include "file.H"
 #include "simple_disk.H"
+#include "file.H"
+
 
 /*--------------------------------------------------------------------------*/
 /* DATA STRUCTURES */ 
@@ -65,11 +65,20 @@ private:
      SimpleDisk * disk;
      static unsigned int size;
 	
-	file_info files_list[len_list];
-	int files_list_idx;
-	int current_file_idx;
-	unsigned int len_blk;
-	unsigned char blk_list[512];
+     file_info files_list[len_list];
+     /*the inode file list that store file info, length is defined.*/
+
+     int tail_file_idx;
+     /*where is the index of last written file in the inode file list.*/
+
+     int total_file_cnt;
+     /*where is the total number of written files in the inode file list.*/
+
+     unsigned int len_blk;
+     /*the length of each block occupied.*/
+
+     unsigned char blk_list[512];
+     /*the block list itself, set the maximum number as 512.*/
 	
      
 public:
@@ -96,8 +105,13 @@ public:
     /* Delete file with given id in the file system; free any disk block occupied by the file. */
     
     void occupy(unsigned int begin_idx);
+    /* Occupy the block list space with the given index in the block list. */
+
     void release(unsigned int begin_idx);
+    /* Release the block list space with the given index in the block list. */
+
     int next_valid();
+    /*Return the next valid index in the block list that could store files, if not, return -1.*/
    
 };
 #endif
