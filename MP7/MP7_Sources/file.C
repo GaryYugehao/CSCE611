@@ -26,11 +26,14 @@
 /* CONSTRUCTOR */
 /*--------------------------------------------------------------------------*/
 
-File::File() {
+File::File(inode * _inode) {
     /* We will need some arguments for the constructor, maybe pointer to disk
      block with file management and allocation data. */
     Console::puts("In file constructor.\n");
-    assert(false);
+    //assert(false);
+	cur_inode = (inode*) new inode();
+	memcpy((unsigned char*)cur_inode, (unsigned char*)_inode, sizeof(inode));
+	blk_idx = 0;
 }
 
 /*--------------------------------------------------------------------------*/
@@ -39,28 +42,75 @@ File::File() {
 
 int File::Read(unsigned int _n, char * _buf) {
     Console::puts("reading from file\n");
-    assert(false);
+	char temp_buffer[512];
+	memset(temp_buffer, 0, 512);
+	unsigned int read_cnt = 0;
+	while(not EoF() && read_cnt < _n){
+		FILE_SYSTEM->disk->read(cur_inode->loc[blk_idx++], (unsigned char*)temp_buffer);
+		if((_n-read_cnt) > 512){
+			memcpy(_buf+read_cnt, temp_buffer, 512);
+			read_cnt += 512;
+		}else{
+			memcpy(_buf+read_cnt, (char*)temp_buffer, (_n-read_cnt));
+			read_cnt += (_n-read_cnt);
+		}
+	}
+	Console::puts("Successfully read from file\n");
+	return read_cnt;
+    //assert(false);
 }
 
 
 void File::Write(unsigned int _n, const char * _buf) {
     Console::puts("writing to file\n");
-    assert(false);
+	char temp_buffer[512];
+
+	unsigned int write_cnt = 0;
+	while(write_cnt < _n){
+		int new_blk_head = FILE_SYSTEM->next_valid();
+		FILE_SYSTEM->occupy(new_blk_head);
+		cur_inode->loc[cur_inode->len++] = new_blk_head;
+		char temp_buffer[512];
+		memset(temp_buffer, 0, 512);
+
+		if((_n-write_cnt) > 512){
+			memcpy(temp_buffer, _buf, 512);
+			FILE_SYSTEM->disk->write(new_blk_head, (unsigned char *)temp_buffer);
+			write_cnt += 512;
+		}else{
+			memcpy(temp_buffer, _buf, (_n-write_cnt));
+			FILE_SYSTEM->disk->write(new_blk_head, (unsigned char *)temp_buffer);
+			write_cnt += (_n-write_cnt);
+		}
+		blk_idx += 1;
+	}
+	Console::puts("Successfully write the file\n");
+	FILE_SYSTEM->disk->write(cur_inode->key, (unsigned char*)cur_inode);
+    //assert(false);
 }
 
 void File::Reset() {
     Console::puts("reset current position in file\n");
-    assert(false);
-    
+    //assert(false);
+    blk_idx = 0;
 }
 
 void File::Rewrite() {
     Console::puts("erase content of file\n");
-    assert(false);
+    //assert(false);
+	blk_idx = 0;
+	for(int i =0; cur_inode->len;i++){
+		FILE_SYSTEM->release(cur_inode->loc[i]);
+	}
+	cur_inode->len = 0;
 }
 
 
 bool File::EoF() {
     Console::puts("testing end-of-file condition\n");
-    assert(false);
+    //assert(false);
+	if(cur_inode->len ==0 ||((cur_inode->len)<blk_idx)){
+		return true;
+	}
+	return false;
 }

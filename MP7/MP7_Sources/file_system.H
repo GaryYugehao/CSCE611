@@ -13,6 +13,7 @@
 
 #ifndef _FILE_SYSTEM_H_                   // include file only once
 #define _FILE_SYSTEM_H_
+#define len_list 10
 
 /*--------------------------------------------------------------------------*/
 /* DEFINES */
@@ -31,13 +32,24 @@
 /* DATA STRUCTURES */ 
 /*--------------------------------------------------------------------------*/
 
-/* -- (none) -- */
+struct inode{
+	unsigned int key;
+	unsigned int loc[16];
+	unsigned int len;
+
+};
+
+struct file_info{
+	int key;
+	int id;
+
+};
 
 /*--------------------------------------------------------------------------*/
 /* FORWARD DECLARATIONS */ 
 /*--------------------------------------------------------------------------*/
 
-/* -- (none) -- */
+class File;
 
 /*--------------------------------------------------------------------------*/
 /* F i l e S y s t e m  */
@@ -51,7 +63,14 @@ private:
      /* -- DEFINE YOUR FILE SYSTEM DATA STRUCTURES HERE. */
      
      SimpleDisk * disk;
-     unsigned int size;
+     static unsigned int size;
+	
+	file_info files_list[len_list];
+	int files_list_idx;
+	int current_file_idx;
+	unsigned int len_blk;
+	unsigned char blk_list[512];
+	
      
 public:
 
@@ -75,6 +94,10 @@ public:
     
     bool DeleteFile(int _file_id);
     /* Delete file with given id in the file system; free any disk block occupied by the file. */
+    
+    void occupy(unsigned int begin_idx);
+    void release(unsigned int begin_idx);
+    int next_valid();
    
 };
 #endif

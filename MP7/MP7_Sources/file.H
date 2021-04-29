@@ -22,6 +22,7 @@
 /*--------------------------------------------------------------------------*/
 
 /* -- (none) -- */
+#include "file_system.H"
 
 /*--------------------------------------------------------------------------*/
 /* DATA STRUCTURES */ 
@@ -32,7 +33,9 @@
 /*--------------------------------------------------------------------------*/
 /* class  F i l e   */
 /*--------------------------------------------------------------------------*/
-
+class FileSystem;
+struct inode;
+extern FileSystem * FILE_SYSTEM;
 class File  {
     
 private:
@@ -42,10 +45,12 @@ private:
     
 public:
 
-    File(/* you may need arguments here; maybe a pointer to the disk block
-          containing file management and file allocation data */);
+    File(inode * _inode);
     /* Constructor for the file handle. Set the ’current
      position’ to be at the beginning of the file. */
+    inode * cur_inode;
+    int blk_idx;
+    
     
     int Read(unsigned int _n, char * _buf);
     /* Read _n characters from the file starting at the current location and
