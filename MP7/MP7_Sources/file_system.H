@@ -78,7 +78,7 @@ private:
      /*how many blocks we have.*/
 
      unsigned char blk_list[512];
-     /*a list to store the information of a block, each block is 512 bytes so size is 512.*/
+     /*a bit map of the block list to show us the status of the blocks is occupied or not.*/
 	
      
 public:
