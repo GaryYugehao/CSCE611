@@ -75,10 +75,10 @@ private:
      /*where is the total number of written files in the inode file list.*/
 
      unsigned int len_blk;
-     /*the length of each block occupied.*/
+     /*how many blocks we have.*/
 
      unsigned char blk_list[512];
-     /*the block list itself, set the maximum number as 512.*/
+     /*a list to store the information of a block, each block is 512 bytes so size is 512.*/
 	
      
 public:
